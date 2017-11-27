@@ -37,7 +37,6 @@ namespace CadernoVirtual
                 return false;
             }
         }
-
         public bool VerificarMatricula (string matricula)
         {
             MySqlCommand cmd = Conectar();
@@ -56,13 +55,12 @@ namespace CadernoVirtual
                 return false;
             }
 
-        }
-
+        }        
         public MySqlCommand Conectar()
         {
             MySqlCommand cmd = new MySqlCommand
             {
-                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")
+                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=")//Lembrar de alterar PWD: root
             };
             return cmd;
         }       
@@ -72,25 +70,24 @@ namespace CadernoVirtual
             PANELcadastrar.Visible = true;
             PANELentrar.Visible = false;            
         }
-
         private void BTNpaginaprincipal_Click(object sender, EventArgs e)
         {
             PANELcadastrar.Visible = false;
             PANELentrar.Visible = false;
         }
-
         private void BTNentrar_Click(object sender, EventArgs e)
         {
             PANELentrar.Visible = true;
             PANELcadastrar.Visible = false;
         }
 
+        //CADASTRO
         private void BTNefetuarcadastro_Click(object sender, EventArgs e)
         {
             if (TXTmatricula.Text == string.Empty || TXTusuario.Text == string.Empty || TXTsenha.Text == string.Empty || TXTconfirmarsenha.Text == string.Empty)
                 MessageBox.Show("Preencha todos os campos");
             else if (TXTsenha.Text != TXTconfirmarsenha.Text)
-                MessageBox.Show("As senhas estão diferentes");
+                MessageBox.Show("As senhas estão diferentes, digite a mesma senha no campo 'SENHA' e no campo 'CONFIRMAR SENHA'");
 
             else
             {
@@ -124,6 +121,8 @@ namespace CadernoVirtual
                             TXTusuario.Clear();
                             TXTsenha.Clear();
                             TXTconfirmarsenha.Clear();
+                            PANELcadastrar.Visible = false;
+                            PANELentrar.Visible = true;
                         }
                         catch
                         {
@@ -133,15 +132,59 @@ namespace CadernoVirtual
                     }
                     else
                     {
-                        MessageBox.Show("Usuário já existe");
+                        MessageBox.Show("Este usuário já existe, digite outro");
                         TXTusuario.Clear();
                     }
                 else
                 {
-                    MessageBox.Show("Matrícula já existe");
+                    MessageBox.Show("Já existe um usuário cadastrado nessa matrícula");
                     TXTmatricula.Clear();
                 }
             }
         }
+
+        //ENTRAR
+        private void BTNentrarnaconta_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT usuario FROM aluno WHERE usuario = @usuario AND senha = @senha;";
+            cmd.Parameters.AddWithValue("@usuario", TXTusuarioEntrar.Text);
+            cmd.Parameters.AddWithValue("@senha", TXTsenhaEntrar.Text);
+
+            string erro = "";
+            try
+            {
+                erro = "Falha na conexão ao banco (login aluno)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar aluno";
+                MySqlDataReader dr = cmd.ExecuteReader();                
+
+                if (dr.Read())
+                {
+                    MessageBox.Show("logado com sucesso");
+                    //principal principal = new principal();
+                    //this.Visible = false;
+                    //principal.ShowDialog();
+                }
+                else
+                {
+                    if(TXTusuarioEntrar.Text == string.Empty || TXTsenhaEntrar.Text == string.Empty)
+                        MessageBox.Show("Preencha todos os campos corretamente");
+                        
+                    else
+                        MessageBox.Show("Usuário ou senha incorretos");
+                }
+
+                erro = "Falha ao fechar conexão";
+                cmd.Connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show(erro);
+            }           
+        }
+           
+        
+
     }
 }

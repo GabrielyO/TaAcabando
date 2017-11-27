@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.1.22-MariaDB - mariadb.org binary distribution
--- OS do Servidor:               Win64
+-- Versão do servidor:           10.1.16-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win32
 -- HeidiSQL Versão:              9.4.0.5125
 -- --------------------------------------------------------
 
@@ -24,8 +24,11 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   PRIMARY KEY (`matricula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela caderno.aluno: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela caderno.aluno: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
+INSERT INTO `aluno` (`matricula`, `usuario`, `senha`) VALUES
+	('231101015', 'Gabriely', '040400'),
+	('231101515', 'Ursula', 'ur00');
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
