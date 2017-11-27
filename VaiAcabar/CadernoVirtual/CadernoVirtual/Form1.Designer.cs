@@ -34,21 +34,19 @@
             this.BTNentrar = new System.Windows.Forms.Button();
             this.BTNcadastrar = new System.Windows.Forms.Button();
             this.PANELbutns = new System.Windows.Forms.Panel();
-            this.PANELcadastrar = new System.Windows.Forms.Panel();
-            this.BTNefetuarcadastro = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TXTusuario = new System.Windows.Forms.TextBox();
-            this.TXTturma = new System.Windows.Forms.TextBox();
-            this.TXTmatricula = new System.Windows.Forms.TextBox();
-            this.TXTsenha = new System.Windows.Forms.TextBox();
             this.BTNpaginaprincipal = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TXTconfirmarsenha = new System.Windows.Forms.TextBox();
+            this.PANELcadastrar = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.TXTconfirmarsenha = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TXTsenha = new System.Windows.Forms.TextBox();
+            this.TXTmatricula = new System.Windows.Forms.TextBox();
+            this.TXTusuario = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BTNefetuarcadastro = new System.Windows.Forms.Button();
             this.PANELentrar = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -86,11 +84,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tituloPaginaPrincipal.AutoSize = true;
             this.tituloPaginaPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.tituloPaginaPrincipal.Font = new System.Drawing.Font("AR JULIAN", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloPaginaPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloPaginaPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.tituloPaginaPrincipal.Location = new System.Drawing.Point(109, 35);
             this.tituloPaginaPrincipal.Name = "tituloPaginaPrincipal";
-            this.tituloPaginaPrincipal.Size = new System.Drawing.Size(400, 56);
+            this.tituloPaginaPrincipal.Size = new System.Drawing.Size(386, 55);
             this.tituloPaginaPrincipal.TabIndex = 1;
             this.tituloPaginaPrincipal.Text = "Página Principal";
             this.tituloPaginaPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -101,7 +99,7 @@
             this.BTNentrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNentrar.FlatAppearance.BorderSize = 0;
             this.BTNentrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNentrar.Font = new System.Drawing.Font("AR JULIAN", 14F, System.Drawing.FontStyle.Bold);
+            this.BTNentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.BTNentrar.ForeColor = System.Drawing.SystemColors.Info;
             this.BTNentrar.Location = new System.Drawing.Point(3, 101);
             this.BTNentrar.Name = "BTNentrar";
@@ -117,7 +115,7 @@
             this.BTNcadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNcadastrar.FlatAppearance.BorderSize = 0;
             this.BTNcadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNcadastrar.Font = new System.Drawing.Font("AR JULIAN", 14F, System.Drawing.FontStyle.Bold);
+            this.BTNcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.BTNcadastrar.ForeColor = System.Drawing.SystemColors.Info;
             this.BTNcadastrar.Location = new System.Drawing.Point(3, 148);
             this.BTNcadastrar.Name = "BTNcadastrar";
@@ -139,6 +137,22 @@
             this.PANELbutns.Size = new System.Drawing.Size(201, 197);
             this.PANELbutns.TabIndex = 4;
             // 
+            // BTNpaginaprincipal
+            // 
+            this.BTNpaginaprincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.BTNpaginaprincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNpaginaprincipal.FlatAppearance.BorderSize = 0;
+            this.BTNpaginaprincipal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTNpaginaprincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.BTNpaginaprincipal.ForeColor = System.Drawing.SystemColors.Info;
+            this.BTNpaginaprincipal.Location = new System.Drawing.Point(3, 31);
+            this.BTNpaginaprincipal.Name = "BTNpaginaprincipal";
+            this.BTNpaginaprincipal.Size = new System.Drawing.Size(195, 64);
+            this.BTNpaginaprincipal.TabIndex = 4;
+            this.BTNpaginaprincipal.Text = "PÁGINA PRINCIPAL";
+            this.BTNpaginaprincipal.UseVisualStyleBackColor = false;
+            this.BTNpaginaprincipal.Click += new System.EventHandler(this.BTNpaginaprincipal_Click);
+            // 
             // PANELcadastrar
             // 
             this.PANELcadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -151,11 +165,9 @@
             this.PANELcadastrar.Controls.Add(this.pictureBox1);
             this.PANELcadastrar.Controls.Add(this.TXTsenha);
             this.PANELcadastrar.Controls.Add(this.TXTmatricula);
-            this.PANELcadastrar.Controls.Add(this.TXTturma);
             this.PANELcadastrar.Controls.Add(this.TXTusuario);
             this.PANELcadastrar.Controls.Add(this.label4);
             this.PANELcadastrar.Controls.Add(this.label3);
-            this.PANELcadastrar.Controls.Add(this.label2);
             this.PANELcadastrar.Controls.Add(this.label1);
             this.PANELcadastrar.Controls.Add(this.BTNefetuarcadastro);
             this.PANELcadastrar.Location = new System.Drawing.Point(300, 120);
@@ -164,122 +176,40 @@
             this.PANELcadastrar.TabIndex = 5;
             this.PANELcadastrar.Visible = false;
             // 
-            // BTNefetuarcadastro
+            // label6
             // 
-            this.BTNefetuarcadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BTNefetuarcadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.BTNefetuarcadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTNefetuarcadastro.FlatAppearance.BorderSize = 0;
-            this.BTNefetuarcadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNefetuarcadastro.Font = new System.Drawing.Font("AR JULIAN", 14F);
-            this.BTNefetuarcadastro.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNefetuarcadastro.Location = new System.Drawing.Point(145, 291);
-            this.BTNefetuarcadastro.Name = "BTNefetuarcadastro";
-            this.BTNefetuarcadastro.Size = new System.Drawing.Size(127, 41);
-            this.BTNefetuarcadastro.TabIndex = 3;
-            this.BTNefetuarcadastro.Text = "Cadastrar";
-            this.BTNefetuarcadastro.UseVisualStyleBackColor = false;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.label6.Location = new System.Drawing.Point(26, 208);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 18);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Confirmar Senha";
             // 
-            // label1
+            // TXTconfirmarsenha
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(101, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Usuário";
+            this.TXTconfirmarsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TXTconfirmarsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTconfirmarsenha.Location = new System.Drawing.Point(181, 204);
+            this.TXTconfirmarsenha.Name = "TXTconfirmarsenha";
+            this.TXTconfirmarsenha.PasswordChar = '*';
+            this.TXTconfirmarsenha.Size = new System.Drawing.Size(170, 22);
+            this.TXTconfirmarsenha.TabIndex = 14;
             // 
-            // label2
+            // label5
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(110, 147);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Turma";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(85, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Matrícula";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(116, 206);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Senha";
-            // 
-            // TXTusuario
-            // 
-            this.TXTusuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TXTusuario.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTusuario.Location = new System.Drawing.Point(181, 118);
-            this.TXTusuario.Name = "TXTusuario";
-            this.TXTusuario.Size = new System.Drawing.Size(170, 22);
-            this.TXTusuario.TabIndex = 8;
-            // 
-            // TXTturma
-            // 
-            this.TXTturma.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TXTturma.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTturma.Location = new System.Drawing.Point(181, 146);
-            this.TXTturma.Name = "TXTturma";
-            this.TXTturma.Size = new System.Drawing.Size(118, 22);
-            this.TXTturma.TabIndex = 9;
-            // 
-            // TXTmatricula
-            // 
-            this.TXTmatricula.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TXTmatricula.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTmatricula.Location = new System.Drawing.Point(181, 177);
-            this.TXTmatricula.Name = "TXTmatricula";
-            this.TXTmatricula.Size = new System.Drawing.Size(118, 22);
-            this.TXTmatricula.TabIndex = 10;
-            // 
-            // TXTsenha
-            // 
-            this.TXTsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TXTsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTsenha.Location = new System.Drawing.Point(181, 205);
-            this.TXTsenha.Name = "TXTsenha";
-            this.TXTsenha.PasswordChar = '*';
-            this.TXTsenha.Size = new System.Drawing.Size(170, 22);
-            this.TXTsenha.TabIndex = 11;
-            // 
-            // BTNpaginaprincipal
-            // 
-            this.BTNpaginaprincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.BTNpaginaprincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTNpaginaprincipal.FlatAppearance.BorderSize = 0;
-            this.BTNpaginaprincipal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNpaginaprincipal.Font = new System.Drawing.Font("AR JULIAN", 14F, System.Drawing.FontStyle.Bold);
-            this.BTNpaginaprincipal.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNpaginaprincipal.Location = new System.Drawing.Point(3, 31);
-            this.BTNpaginaprincipal.Name = "BTNpaginaprincipal";
-            this.BTNpaginaprincipal.Size = new System.Drawing.Size(195, 64);
-            this.BTNpaginaprincipal.TabIndex = 4;
-            this.BTNpaginaprincipal.Text = "PÁGINA PRINCIPAL";
-            this.BTNpaginaprincipal.UseVisualStyleBackColor = false;
-            this.BTNpaginaprincipal.Click += new System.EventHandler(this.BTNpaginaprincipal_Click);
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(149, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(228, 55);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Cadastro";
             // 
             // pictureBox1
             // 
@@ -295,40 +225,86 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // label5
+            // TXTsenha
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("AR JULIAN", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(149, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(233, 56);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Cadastro";
+            this.TXTsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TXTsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTsenha.Location = new System.Drawing.Point(181, 176);
+            this.TXTsenha.Name = "TXTsenha";
+            this.TXTsenha.PasswordChar = '*';
+            this.TXTsenha.Size = new System.Drawing.Size(170, 22);
+            this.TXTsenha.TabIndex = 11;
             // 
-            // TXTconfirmarsenha
+            // TXTmatricula
             // 
-            this.TXTconfirmarsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TXTconfirmarsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTconfirmarsenha.Location = new System.Drawing.Point(181, 233);
-            this.TXTconfirmarsenha.Name = "TXTconfirmarsenha";
-            this.TXTconfirmarsenha.PasswordChar = '*';
-            this.TXTconfirmarsenha.Size = new System.Drawing.Size(170, 22);
-            this.TXTconfirmarsenha.TabIndex = 14;
+            this.TXTmatricula.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TXTmatricula.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTmatricula.Location = new System.Drawing.Point(181, 146);
+            this.TXTmatricula.Name = "TXTmatricula";
+            this.TXTmatricula.Size = new System.Drawing.Size(118, 22);
+            this.TXTmatricula.TabIndex = 10;
             // 
-            // label6
+            // TXTusuario
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(26, 234);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 18);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Confirmar Senha";
+            this.TXTusuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TXTusuario.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTusuario.Location = new System.Drawing.Point(181, 118);
+            this.TXTusuario.Name = "TXTusuario";
+            this.TXTusuario.Size = new System.Drawing.Size(170, 22);
+            this.TXTusuario.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.label4.Location = new System.Drawing.Point(116, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 18);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Senha";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.label3.Location = new System.Drawing.Point(85, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Matrícula";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.label1.Location = new System.Drawing.Point(101, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Usuário";
+            // 
+            // BTNefetuarcadastro
+            // 
+            this.BTNefetuarcadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BTNefetuarcadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.BTNefetuarcadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNefetuarcadastro.FlatAppearance.BorderSize = 0;
+            this.BTNefetuarcadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTNefetuarcadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.BTNefetuarcadastro.ForeColor = System.Drawing.SystemColors.Info;
+            this.BTNefetuarcadastro.Location = new System.Drawing.Point(145, 291);
+            this.BTNefetuarcadastro.Name = "BTNefetuarcadastro";
+            this.BTNefetuarcadastro.Size = new System.Drawing.Size(127, 41);
+            this.BTNefetuarcadastro.TabIndex = 3;
+            this.BTNefetuarcadastro.Text = "Cadastrar";
+            this.BTNefetuarcadastro.UseVisualStyleBackColor = false;
+            this.BTNefetuarcadastro.Click += new System.EventHandler(this.BTNefetuarcadastro_Click);
             // 
             // PANELentrar
             // 
@@ -354,11 +330,11 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("AR JULIAN", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.label8.Location = new System.Drawing.Point(148, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 56);
+            this.label8.Size = new System.Drawing.Size(161, 55);
             this.label8.TabIndex = 13;
             this.label8.Text = "Entrar";
             // 
@@ -425,7 +401,7 @@
             this.BTNentrarnaconta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNentrarnaconta.FlatAppearance.BorderSize = 0;
             this.BTNentrarnaconta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNentrarnaconta.Font = new System.Drawing.Font("AR JULIAN", 14F);
+            this.BTNentrarnaconta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.BTNentrarnaconta.ForeColor = System.Drawing.SystemColors.Info;
             this.BTNentrarnaconta.Location = new System.Drawing.Point(158, 203);
             this.BTNentrarnaconta.Name = "BTNentrarnaconta";
@@ -493,11 +469,9 @@
         private System.Windows.Forms.Panel PANELcadastrar;
         private System.Windows.Forms.TextBox TXTsenha;
         private System.Windows.Forms.TextBox TXTmatricula;
-        private System.Windows.Forms.TextBox TXTturma;
         private System.Windows.Forms.TextBox TXTusuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BTNefetuarcadastro;
         private System.Windows.Forms.Button BTNpaginaprincipal;
