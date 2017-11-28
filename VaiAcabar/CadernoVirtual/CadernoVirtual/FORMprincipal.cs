@@ -18,6 +18,8 @@ namespace CadernoVirtual
             InitializeComponent();
         }
 
+        public string login;
+
         public bool VerificarUsuario (string usuario)
         {
             MySqlCommand cmd = Conectar();
@@ -161,15 +163,15 @@ namespace CadernoVirtual
 
                 if (dr.Read())
                 {
-                    MessageBox.Show("logado com sucesso");
-                    //principal principal = new principal();
-                    //this.Visible = false;
-                    //principal.ShowDialog();
+                    login = TXTusuarioEntrar.Text;
+                    FORMindividual formindividual = new FORMindividual(login);
+                    this.Visible = false;
+                    formindividual.ShowDialog();
                 }
                 else
                 {
                     if(TXTusuarioEntrar.Text == string.Empty || TXTsenhaEntrar.Text == string.Empty)
-                        MessageBox.Show("Preencha todos os campos corretamente");
+                        MessageBox.Show("Preencha todos os campos corretamente, verifique se não deixou algum dos campos vazio");
                         
                     else
                         MessageBox.Show("Usuário ou senha incorretos");

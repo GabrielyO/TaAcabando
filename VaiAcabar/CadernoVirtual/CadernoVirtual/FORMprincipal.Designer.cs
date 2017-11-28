@@ -82,11 +82,11 @@
             // 
             this.tituloPaginaPrincipal.AutoSize = true;
             this.tituloPaginaPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.tituloPaginaPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloPaginaPrincipal.Font = new System.Drawing.Font("AR ESSENCE", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloPaginaPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.tituloPaginaPrincipal.Location = new System.Drawing.Point(109, 35);
+            this.tituloPaginaPrincipal.Location = new System.Drawing.Point(109, 19);
             this.tituloPaginaPrincipal.Name = "tituloPaginaPrincipal";
-            this.tituloPaginaPrincipal.Size = new System.Drawing.Size(386, 55);
+            this.tituloPaginaPrincipal.Size = new System.Drawing.Size(430, 81);
             this.tituloPaginaPrincipal.TabIndex = 1;
             this.tituloPaginaPrincipal.Text = "Página Principal";
             this.tituloPaginaPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -202,11 +202,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("AR ESSENCE", 48F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(149, 24);
+            this.label5.Location = new System.Drawing.Point(158, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 55);
+            this.label5.Size = new System.Drawing.Size(230, 77);
             this.label5.TabIndex = 13;
             this.label5.Text = "Cadastro";
             // 
@@ -329,11 +329,11 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("AR ESSENCE", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.label8.Location = new System.Drawing.Point(148, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 55);
+            this.label8.Size = new System.Drawing.Size(170, 77);
             this.label8.TabIndex = 13;
             this.label8.Text = "Entrar";
             // 
@@ -421,7 +421,7 @@
             this.PANELtitulo.Controls.Add(this.iconPaginaPrincipal);
             this.PANELtitulo.Location = new System.Drawing.Point(400, 5);
             this.PANELtitulo.Name = "PANELtitulo";
-            this.PANELtitulo.Size = new System.Drawing.Size(509, 112);
+            this.PANELtitulo.Size = new System.Drawing.Size(542, 112);
             this.PANELtitulo.TabIndex = 7;
             // 
             // paginaInicial
