@@ -17,8 +17,8 @@ namespace CadernoVirtual
         {
             InitializeComponent();
         }
-
-        public string login;
+        
+        public string login;        
 
         public bool VerificarUsuario (string usuario)
         {
@@ -62,7 +62,7 @@ namespace CadernoVirtual
         {
             MySqlCommand cmd = new MySqlCommand
             {
-                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=")//Lembrar de alterar PWD: root
+                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")//Lembrar de alterar PWD: root
             };
             return cmd;
         }       
@@ -164,9 +164,8 @@ namespace CadernoVirtual
                 if (dr.Read())
                 {
                     login = TXTusuarioEntrar.Text;
-                    FORMindividual formindividual = new FORMindividual(login);
-                    this.Visible = false;
-                    formindividual.ShowDialog();
+                    FORMindividual formindividual = new FORMindividual(login);                    
+                    formindividual.Show();                  
                 }
                 else
                 {

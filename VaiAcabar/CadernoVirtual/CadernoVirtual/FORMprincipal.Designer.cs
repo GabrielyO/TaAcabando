@@ -55,14 +55,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.BTNentrarnaconta = new System.Windows.Forms.Button();
-            this.PANELtitulo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconPaginaPrincipal)).BeginInit();
             this.PANELbutns.SuspendLayout();
             this.PANELcadastrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PANELentrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.PANELtitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // iconPaginaPrincipal
@@ -72,7 +70,7 @@
             this.iconPaginaPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iconPaginaPrincipal.Enabled = false;
             this.iconPaginaPrincipal.InitialImage = null;
-            this.iconPaginaPrincipal.Location = new System.Drawing.Point(3, 9);
+            this.iconPaginaPrincipal.Location = new System.Drawing.Point(273, 12);
             this.iconPaginaPrincipal.Name = "iconPaginaPrincipal";
             this.iconPaginaPrincipal.Size = new System.Drawing.Size(100, 100);
             this.iconPaginaPrincipal.TabIndex = 0;
@@ -80,13 +78,15 @@
             // 
             // tituloPaginaPrincipal
             // 
+            this.tituloPaginaPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tituloPaginaPrincipal.AutoSize = true;
             this.tituloPaginaPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.tituloPaginaPrincipal.Font = new System.Drawing.Font("AR ESSENCE", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloPaginaPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloPaginaPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.tituloPaginaPrincipal.Location = new System.Drawing.Point(109, 19);
+            this.tituloPaginaPrincipal.Location = new System.Drawing.Point(379, 23);
             this.tituloPaginaPrincipal.Name = "tituloPaginaPrincipal";
-            this.tituloPaginaPrincipal.Size = new System.Drawing.Size(430, 81);
+            this.tituloPaginaPrincipal.Size = new System.Drawing.Size(528, 76);
             this.tituloPaginaPrincipal.TabIndex = 1;
             this.tituloPaginaPrincipal.Text = "Página Principal";
             this.tituloPaginaPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -202,11 +202,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("AR ESSENCE", 48F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.label5.Location = new System.Drawing.Point(158, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 77);
+            this.label5.Size = new System.Drawing.Size(301, 73);
             this.label5.TabIndex = 13;
             this.label5.Text = "Cadastro";
             // 
@@ -329,11 +329,11 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("AR ESSENCE", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.label8.Location = new System.Drawing.Point(148, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(170, 77);
+            this.label8.Size = new System.Drawing.Size(213, 73);
             this.label8.TabIndex = 13;
             this.label8.Text = "Entrar";
             // 
@@ -411,19 +411,6 @@
             this.BTNentrarnaconta.UseVisualStyleBackColor = false;
             this.BTNentrarnaconta.Click += new System.EventHandler(this.BTNentrarnaconta_Click);
             // 
-            // PANELtitulo
-            // 
-            this.PANELtitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANELtitulo.AutoSize = true;
-            this.PANELtitulo.BackColor = System.Drawing.Color.Transparent;
-            this.PANELtitulo.Controls.Add(this.tituloPaginaPrincipal);
-            this.PANELtitulo.Controls.Add(this.iconPaginaPrincipal);
-            this.PANELtitulo.Location = new System.Drawing.Point(400, 5);
-            this.PANELtitulo.Name = "PANELtitulo";
-            this.PANELtitulo.Size = new System.Drawing.Size(542, 112);
-            this.PANELtitulo.TabIndex = 7;
-            // 
             // paginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -433,16 +420,18 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.tituloPaginaPrincipal);
             this.Controls.Add(this.PANELbutns);
-            this.Controls.Add(this.PANELtitulo);
+            this.Controls.Add(this.iconPaginaPrincipal);
             this.Controls.Add(this.PANELentrar);
             this.Controls.Add(this.PANELcadastrar);
             this.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "paginaInicial";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Página Principal";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -454,8 +443,6 @@
             this.PANELentrar.ResumeLayout(false);
             this.PANELentrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.PANELtitulo.ResumeLayout(false);
-            this.PANELtitulo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,12 +471,11 @@
         private System.Windows.Forms.Panel PANELentrar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox TXTsenhaEntrar;
-        private System.Windows.Forms.TextBox TXTusuarioEntrar;
+        public System.Windows.Forms.TextBox TXTsenhaEntrar;
+        public System.Windows.Forms.TextBox TXTusuarioEntrar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BTNentrarnaconta;
-        private System.Windows.Forms.Panel PANELtitulo;
     }
 }
 

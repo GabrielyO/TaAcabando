@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aluno.cs" />
+    <Compile Include="FORMcriarCaderno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMcriarCaderno.designer.cs">
+      <DependentUpon>FORMcriarCaderno.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMindividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FORMcriarCaderno.resx">
+      <DependentUpon>FORMcriarCaderno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMindividual.resx">
       <DependentUpon>FORMindividual.cs</DependentUpon>
     </EmbeddedResource>

@@ -21,14 +21,37 @@ namespace CadernoVirtual
             tituloApresentacao.Text = ("Bem vindo, "+ login);
         }
 
-        private void BTNsairusuario_Click(object sender, EventArgs e)
+        public void BTNdesconectar_Click(object sender, EventArgs e)
         {
-
+              this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNcriarCaderno_Click(object sender, EventArgs e)
+        {
+            FORMcriarCaderno formcriarCaderno = new FORMcriarCaderno();
+            formcriarCaderno.Show();
+        }
+
+        private void lblTurma_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
