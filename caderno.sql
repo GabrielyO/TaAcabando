@@ -15,7 +15,7 @@
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
 INSERT INTO `aluno` (`matricula`, `usuario`, `senha`) VALUES
 	('231100815', 'ivad', 'batata123'),
-	('231101015', 'Gabriely', '040400'),
+	('2alunocaderno31101015', 'Gabriely', '040400'),
 	('231101515', 'Ursula', 'ur00');
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
 

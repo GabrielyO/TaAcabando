@@ -29,7 +29,7 @@ namespace CadernoVirtual
         {
             MySqlCommand cmd = new MySqlCommand
             {
-                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")//Lembrar de alterar PWD: root
+                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=")//Lembrar de alterar PWD: root
             };
             return cmd;
         }
@@ -155,8 +155,8 @@ namespace CadernoVirtual
                     MySqlCommand cmd = Conectar();
                     cmd.CommandText = "DELETE FROM aluno WHERE matricula = @matricula AND senha = @senha;";
                     cmd.Parameters.AddWithValue("@matricula", TXTmatExcluir.Text);
-                    cmd.Parameters.AddWithValue("@Autor", TXTsenhaExcluir.Text);
-                    
+                    cmd.Parameters.AddWithValue("@Autor", TXTsenhaExcluir.Text);                    
+
                     erro = "Falha na conexão ao banco (Exclusão de aluno)";
                     cmd.Connection.Open();
                     erro = "Digite a senha e a matrícula correta!";
@@ -164,10 +164,10 @@ namespace CadernoVirtual
                     erro = "Falha ao fechar conexão";
                     cmd.Connection.Close();
 
-                    MessageBox.Show("Livro excluído com sucesso!");
+                    MessageBox.Show("Aluno excluído com sucesso!");
                     TXTmatExcluir.Clear();
                     TXTsenhaExcluir.Clear();
-                    PANELexcluirAluno.Visible = false;
+                    this.Close();
                 }
                 catch
                 {
