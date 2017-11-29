@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aluno.cs" />
+    <Compile Include="Caderno.cs" />
     <Compile Include="FORMindividual.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -16,9 +16,7 @@ namespace CadernoVirtual
         public paginaInicial()
         {
             InitializeComponent();
-        }
-        
-        public string login, matricula;        
+        }       
 
         public bool VerificarUsuario (string usuario)
         {
@@ -70,10 +68,12 @@ namespace CadernoVirtual
         private void BTNcadastrar_Click(object sender, EventArgs e)
         {
             PANELcadastrar.Visible = true;
-            PANELentrar.Visible = false;            
+            PANELentrar.Visible = false;
+            PANELprincipal.Visible = false;
         }
         private void BTNpaginaprincipal_Click(object sender, EventArgs e)
         {
+            PANELprincipal.Visible = true;
             PANELcadastrar.Visible = false;
             PANELentrar.Visible = false;
         }
@@ -81,6 +81,7 @@ namespace CadernoVirtual
         {
             PANELentrar.Visible = true;
             PANELcadastrar.Visible = false;
+            PANELprincipal.Visible = false;
         }
 
         //CADASTRO
@@ -149,7 +150,7 @@ namespace CadernoVirtual
         private void BTNentrarnaconta_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = Conectar();
-            cmd.CommandText = "SELECT usuario FROM aluno WHERE usuario = @usuario AND senha = @senha;";
+            cmd.CommandText = "SELECT * FROM aluno WHERE usuario = @usuario AND senha = @senha;";
             cmd.Parameters.AddWithValue("@usuario", TXTusuarioEntrar.Text);
             cmd.Parameters.AddWithValue("@senha", TXTsenhaEntrar.Text);
 
@@ -163,9 +164,14 @@ namespace CadernoVirtual
 
                 if (dr.Read())
                 {
-                    login = TXTusuarioEntrar.Text;
-                    matricula = TXTmatricula.Text;
-                    FORMindividual formindividual = new FORMindividual(login, matricula);                    
+                    Aluno a = new Aluno();
+                    a.matricula = dr.GetString(0);
+                    a.usuario = dr.GetString(1);
+                    a.senha = dr.GetString(2);
+
+                    FORMindividual formindividual = new FORMindividual(a.usuario, a.matricula);
+                    TXTusuarioEntrar.Clear();
+                    TXTsenhaEntrar.Clear();
                     formindividual.Show();                  
                 }
                 else

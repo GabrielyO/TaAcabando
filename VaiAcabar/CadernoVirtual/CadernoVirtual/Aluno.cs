@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CadernoVirtual
 {
-    class Aluno
+    public class Aluno
     {
         public string matricula { get; set; }
         public string usuario { get; set; }
