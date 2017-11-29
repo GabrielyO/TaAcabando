@@ -12,18 +12,22 @@ namespace CadernoVirtual
 {
     public partial class FORMindividual : Form
     {
-        public string login;
+        public string login, matricula;
 
-        public FORMindividual(string login)
+        public FORMindividual(string login, string matricula)
         {
             InitializeComponent();
             this.login = login;
+            this.matricula = matricula;
             tituloApresentacao.Text = ("Bem vindo, "+ login);
+            LBLuser.Text = ("Usuário: " + login);
+            LBLuser.Text = ("Matricula: " + matricula);
+
         }
 
-        public void BTNdesconectar_Click(object sender, EventArgs e)
+        private void BTNsairusuario_Click(object sender, EventArgs e)
         {
-              this.Close();
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -31,27 +35,25 @@ namespace CadernoVirtual
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BTNcriarCaderno_Click(object sender, EventArgs e)
         {
-            FORMcriarCaderno formcriarCaderno = new FORMcriarCaderno();
-            formcriarCaderno.Show();
+            PANELcriarCaderno.Visible = true;
         }
 
-        private void lblTurma_Click(object sender, EventArgs e)
+        private void BTNexcluirUsuario_Click(object sender, EventArgs e)
         {
-
+            PANELexcluirAluno.Visible = true;
         }
 
-        
+        private void BTNinicio_Click(object sender, EventArgs e)
+        {
+            PANELeditarAluno.Visible = false;
+            PANELexcluirAluno.Visible = false;
+        }
+
+        private void BTNeditarUsuario_Click(object sender, EventArgs e)
+        {
+            PANELeditarAluno.Visible = true;
+        }
     }
 }

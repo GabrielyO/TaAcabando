@@ -70,7 +70,7 @@
             this.iconPaginaPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iconPaginaPrincipal.Enabled = false;
             this.iconPaginaPrincipal.InitialImage = null;
-            this.iconPaginaPrincipal.Location = new System.Drawing.Point(273, 12);
+            this.iconPaginaPrincipal.Location = new System.Drawing.Point(502, 14);
             this.iconPaginaPrincipal.Name = "iconPaginaPrincipal";
             this.iconPaginaPrincipal.Size = new System.Drawing.Size(100, 100);
             this.iconPaginaPrincipal.TabIndex = 0;
@@ -84,7 +84,7 @@
             this.tituloPaginaPrincipal.BackColor = System.Drawing.Color.Transparent;
             this.tituloPaginaPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloPaginaPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.tituloPaginaPrincipal.Location = new System.Drawing.Point(379, 23);
+            this.tituloPaginaPrincipal.Location = new System.Drawing.Point(608, 25);
             this.tituloPaginaPrincipal.Name = "tituloPaginaPrincipal";
             this.tituloPaginaPrincipal.Size = new System.Drawing.Size(528, 76);
             this.tituloPaginaPrincipal.TabIndex = 1;
@@ -93,6 +93,7 @@
             // 
             // BTNentrar
             // 
+            this.BTNentrar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BTNentrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.BTNentrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNentrar.FlatAppearance.BorderSize = 0;
@@ -109,6 +110,7 @@
             // 
             // BTNcadastrar
             // 
+            this.BTNcadastrar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BTNcadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.BTNcadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNcadastrar.FlatAppearance.BorderSize = 0;
@@ -125,18 +127,19 @@
             // 
             // PANELbutns
             // 
-            this.PANELbutns.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PANELbutns.BackColor = System.Drawing.Color.Transparent;
             this.PANELbutns.Controls.Add(this.BTNpaginaprincipal);
             this.PANELbutns.Controls.Add(this.BTNcadastrar);
             this.PANELbutns.Controls.Add(this.BTNentrar);
-            this.PANELbutns.Location = new System.Drawing.Point(22, 205);
+            this.PANELbutns.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PANELbutns.Location = new System.Drawing.Point(0, 0);
             this.PANELbutns.Name = "PANELbutns";
-            this.PANELbutns.Size = new System.Drawing.Size(201, 197);
+            this.PANELbutns.Size = new System.Drawing.Size(201, 681);
             this.PANELbutns.TabIndex = 4;
             // 
             // BTNpaginaprincipal
             // 
+            this.BTNpaginaprincipal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BTNpaginaprincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.BTNpaginaprincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNpaginaprincipal.FlatAppearance.BorderSize = 0;
@@ -169,9 +172,9 @@
             this.PANELcadastrar.Controls.Add(this.label3);
             this.PANELcadastrar.Controls.Add(this.label1);
             this.PANELcadastrar.Controls.Add(this.BTNefetuarcadastro);
-            this.PANELcadastrar.Location = new System.Drawing.Point(300, 120);
+            this.PANELcadastrar.Location = new System.Drawing.Point(381, 120);
             this.PANELcadastrar.Name = "PANELcadastrar";
-            this.PANELcadastrar.Size = new System.Drawing.Size(416, 350);
+            this.PANELcadastrar.Size = new System.Drawing.Size(257, 287);
             this.PANELcadastrar.TabIndex = 5;
             this.PANELcadastrar.Visible = false;
             // 
@@ -181,7 +184,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(26, 208);
+            this.label6.Location = new System.Drawing.Point(-131, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 18);
             this.label6.TabIndex = 15;
@@ -191,7 +194,7 @@
             // 
             this.TXTconfirmarsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTconfirmarsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTconfirmarsenha.Location = new System.Drawing.Point(181, 204);
+            this.TXTconfirmarsenha.Location = new System.Drawing.Point(24, 225);
             this.TXTconfirmarsenha.Name = "TXTconfirmarsenha";
             this.TXTconfirmarsenha.PasswordChar = '*';
             this.TXTconfirmarsenha.Size = new System.Drawing.Size(170, 22);
@@ -204,7 +207,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(158, 25);
+            this.label5.Location = new System.Drawing.Point(1, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(301, 73);
             this.label5.TabIndex = 13;
@@ -218,7 +221,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(66, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(-91, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 100);
             this.pictureBox1.TabIndex = 12;
@@ -228,7 +231,7 @@
             // 
             this.TXTsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTsenha.Location = new System.Drawing.Point(181, 176);
+            this.TXTsenha.Location = new System.Drawing.Point(24, 197);
             this.TXTsenha.Name = "TXTsenha";
             this.TXTsenha.PasswordChar = '*';
             this.TXTsenha.Size = new System.Drawing.Size(170, 22);
@@ -238,7 +241,7 @@
             // 
             this.TXTmatricula.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTmatricula.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTmatricula.Location = new System.Drawing.Point(181, 146);
+            this.TXTmatricula.Location = new System.Drawing.Point(24, 167);
             this.TXTmatricula.Name = "TXTmatricula";
             this.TXTmatricula.Size = new System.Drawing.Size(118, 22);
             this.TXTmatricula.TabIndex = 10;
@@ -247,7 +250,7 @@
             // 
             this.TXTusuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTusuario.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTusuario.Location = new System.Drawing.Point(181, 118);
+            this.TXTusuario.Location = new System.Drawing.Point(24, 139);
             this.TXTusuario.Name = "TXTusuario";
             this.TXTusuario.Size = new System.Drawing.Size(170, 22);
             this.TXTusuario.TabIndex = 8;
@@ -258,7 +261,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(116, 177);
+            this.label4.Location = new System.Drawing.Point(-41, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 7;
@@ -270,7 +273,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(85, 150);
+            this.label3.Location = new System.Drawing.Point(-72, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 6;
@@ -282,7 +285,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(101, 122);
+            this.label1.Location = new System.Drawing.Point(-56, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 18);
             this.label1.TabIndex = 4;
@@ -297,7 +300,7 @@
             this.BTNefetuarcadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTNefetuarcadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.BTNefetuarcadastro.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNefetuarcadastro.Location = new System.Drawing.Point(145, 291);
+            this.BTNefetuarcadastro.Location = new System.Drawing.Point(-12, 312);
             this.BTNefetuarcadastro.Name = "BTNefetuarcadastro";
             this.BTNefetuarcadastro.Size = new System.Drawing.Size(127, 41);
             this.BTNefetuarcadastro.TabIndex = 3;
@@ -307,7 +310,8 @@
             // 
             // PANELentrar
             // 
-            this.PANELentrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PANELentrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANELentrar.BackColor = System.Drawing.Color.Transparent;
             this.PANELentrar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -318,9 +322,9 @@
             this.PANELentrar.Controls.Add(this.label9);
             this.PANELentrar.Controls.Add(this.label12);
             this.PANELentrar.Controls.Add(this.BTNentrarnaconta);
-            this.PANELentrar.Location = new System.Drawing.Point(300, 120);
+            this.PANELentrar.Location = new System.Drawing.Point(382, 120);
             this.PANELentrar.Name = "PANELentrar";
-            this.PANELentrar.Size = new System.Drawing.Size(416, 350);
+            this.PANELentrar.Size = new System.Drawing.Size(256, 287);
             this.PANELentrar.TabIndex = 6;
             this.PANELentrar.Visible = false;
             // 
@@ -331,7 +335,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label8.Location = new System.Drawing.Point(148, 46);
+            this.label8.Location = new System.Drawing.Point(68, 46);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(213, 73);
             this.label8.TabIndex = 13;
@@ -345,7 +349,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Enabled = false;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(52, 29);
+            this.pictureBox2.Location = new System.Drawing.Point(-28, 29);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
             this.pictureBox2.TabIndex = 12;
@@ -355,7 +359,7 @@
             // 
             this.TXTsenhaEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTsenhaEntrar.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTsenhaEntrar.Location = new System.Drawing.Point(145, 163);
+            this.TXTsenhaEntrar.Location = new System.Drawing.Point(65, 163);
             this.TXTsenhaEntrar.Name = "TXTsenhaEntrar";
             this.TXTsenhaEntrar.PasswordChar = '*';
             this.TXTsenhaEntrar.Size = new System.Drawing.Size(170, 22);
@@ -365,7 +369,7 @@
             // 
             this.TXTusuarioEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTusuarioEntrar.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTusuarioEntrar.Location = new System.Drawing.Point(145, 135);
+            this.TXTusuarioEntrar.Location = new System.Drawing.Point(65, 135);
             this.TXTusuarioEntrar.Name = "TXTusuarioEntrar";
             this.TXTusuarioEntrar.Size = new System.Drawing.Size(170, 22);
             this.TXTusuarioEntrar.TabIndex = 8;
@@ -376,7 +380,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label9.Location = new System.Drawing.Point(74, 163);
+            this.label9.Location = new System.Drawing.Point(-6, 163);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 18);
             this.label9.TabIndex = 7;
@@ -388,7 +392,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.label12.Location = new System.Drawing.Point(65, 139);
+            this.label12.Location = new System.Drawing.Point(-15, 139);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 18);
             this.label12.TabIndex = 4;
@@ -403,7 +407,7 @@
             this.BTNentrarnaconta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTNentrarnaconta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.BTNentrarnaconta.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNentrarnaconta.Location = new System.Drawing.Point(158, 203);
+            this.BTNentrarnaconta.Location = new System.Drawing.Point(78, 203);
             this.BTNentrarnaconta.Name = "BTNentrarnaconta";
             this.BTNentrarnaconta.Size = new System.Drawing.Size(127, 41);
             this.BTNentrarnaconta.TabIndex = 3;
@@ -423,8 +427,8 @@
             this.Controls.Add(this.tituloPaginaPrincipal);
             this.Controls.Add(this.PANELbutns);
             this.Controls.Add(this.iconPaginaPrincipal);
-            this.Controls.Add(this.PANELentrar);
             this.Controls.Add(this.PANELcadastrar);
+            this.Controls.Add(this.PANELentrar);
             this.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
