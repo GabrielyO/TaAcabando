@@ -15,6 +15,7 @@ namespace CadernoVirtual
     {
 
         public string matriculaAntiga, usuarioAntigo, cadernoId, turma;
+
         public FORMindividual(string login, string matricula)
         {
             InitializeComponent();
@@ -23,6 +24,49 @@ namespace CadernoVirtual
             tituloApresentacao.Text = ("Bem vindo, "+ login);
             LBLuser.Text = ("Usuário: " + login);
             LBLmat.Text = ("Matricula: " + matricula);
+
+            //BANCO DE DADDOS
+
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT turma, ano FROM caderno";
+
+            //string erro = "";
+            //try
+            //{
+            //    erro = "Falha na conexão ao banco (Editar Caderno)";
+            //    cmd.Connection.Open();
+            //    erro = "Falha ao buscar Caderno";
+            //    MySqlDataReader dr = cmd.ExecuteReader();
+
+            //    if (dr.Read())
+            //    {
+            //        Caderno c = new Caderno();
+            //        c.id = dr.GetString(0);
+            //        c.turma = dr.GetString(1);
+            //        c.ano = dr.GetString(2);
+            //        c.senha = dr.GetString(3);
+
+            //        FORMcaderno caderno = new FORMcaderno();
+            //        TXTturmaCaderno.Clear();
+            //        TXTsenhaCaderno.Clear();
+            //        TXTanoCaderno.Clear();
+            //        caderno.Show();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Turma, ano ou senha incorretos");
+            //    }
+
+            //    erro = "Falha ao fechar conexão";
+            //    cmd.Connection.Close();
+            //}
+            //catch
+            //{
+            //    MessageBox.Show(erro);
+            //}
+
+
+
         }
 
         //CONECTAR

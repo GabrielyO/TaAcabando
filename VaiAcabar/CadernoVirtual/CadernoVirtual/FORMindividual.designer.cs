@@ -78,6 +78,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BTNcriarturma = new System.Windows.Forms.Button();
             this.filtro = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CBturma = new System.Windows.Forms.ComboBox();
+            this.CBano = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BTNbuscar = new System.Windows.Forms.Button();
             this.PANELinfoPerfil.SuspendLayout();
             this.PANELperfil.SuspendLayout();
             this.PANELeditarAluno.SuspendLayout();
@@ -85,6 +94,7 @@
             this.PANELeditarCaderno.SuspendLayout();
             this.PANELcriarCaderno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.filtro.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTNeditarUsuario
@@ -776,6 +786,15 @@
             // filtro
             // 
             this.filtro.BackColor = System.Drawing.Color.Transparent;
+            this.filtro.Controls.Add(this.BTNbuscar);
+            this.filtro.Controls.Add(this.textBox1);
+            this.filtro.Controls.Add(this.comboBox1);
+            this.filtro.Controls.Add(this.CBano);
+            this.filtro.Controls.Add(this.label13);
+            this.filtro.Controls.Add(this.CBturma);
+            this.filtro.Controls.Add(this.label12);
+            this.filtro.Controls.Add(this.label11);
+            this.filtro.Controls.Add(this.label10);
             this.filtro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.filtro.Font = new System.Drawing.Font("Franklin Gothic Medium", 16F, System.Drawing.FontStyle.Bold);
             this.filtro.ForeColor = System.Drawing.SystemColors.Info;
@@ -785,6 +804,86 @@
             this.filtro.TabIndex = 11;
             this.filtro.TabStop = false;
             this.filtro.Text = "FILTRAR";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(189, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 28);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Turma";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(379, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 28);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Ano";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(610, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 28);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Matéria";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 88);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 28);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Título";
+            // 
+            // CBturma
+            // 
+            this.CBturma.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.CBturma.FormattingEnabled = true;
+            this.CBturma.Location = new System.Drawing.Point(167, 49);
+            this.CBturma.Name = "CBturma";
+            this.CBturma.Size = new System.Drawing.Size(125, 25);
+            this.CBturma.TabIndex = 4;
+            // 
+            // CBano
+            // 
+            this.CBano.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.CBano.FormattingEnabled = true;
+            this.CBano.Location = new System.Drawing.Point(343, 49);
+            this.CBano.Name = "CBano";
+            this.CBano.Size = new System.Drawing.Size(125, 25);
+            this.CBano.TabIndex = 5;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(515, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(282, 25);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(99, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(698, 32);
+            this.textBox1.TabIndex = 7;
+            // 
+            // BTNbuscar
+            // 
+            this.BTNbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNbuscar.Location = new System.Drawing.Point(821, 58);
+            this.BTNbuscar.Name = "BTNbuscar";
+            this.BTNbuscar.Size = new System.Drawing.Size(122, 49);
+            this.BTNbuscar.TabIndex = 8;
+            this.BTNbuscar.Text = "Buscar";
+            this.BTNbuscar.UseVisualStyleBackColor = true;
             // 
             // FORMindividual
             // 
@@ -814,6 +913,8 @@
             this.PANELcriarCaderno.ResumeLayout(false);
             this.PANELcriarCaderno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.filtro.ResumeLayout(false);
+            this.filtro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -870,5 +971,14 @@
         private System.Windows.Forms.TextBox TXTanoCaderno;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox filtro;
+        private System.Windows.Forms.Button BTNbuscar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBano;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox CBturma;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
