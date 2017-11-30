@@ -167,7 +167,7 @@
             this.PANELcadastrar.Location = new System.Drawing.Point(381, 120);
             this.PANELcadastrar.Name = "PANELcadastrar";
             this.PANELcadastrar.Padding = new System.Windows.Forms.Padding(2);
-            this.PANELcadastrar.Size = new System.Drawing.Size(182, 248);
+            this.PANELcadastrar.Size = new System.Drawing.Size(181, 249);
             this.PANELcadastrar.TabIndex = 5;
             this.PANELcadastrar.Visible = false;
             // 
@@ -177,7 +177,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(-139, 214);
+            this.label6.Location = new System.Drawing.Point(-140, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 18);
             this.label6.TabIndex = 15;
@@ -187,7 +187,8 @@
             // 
             this.TXTconfirmarsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTconfirmarsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTconfirmarsenha.Location = new System.Drawing.Point(16, 210);
+            this.TXTconfirmarsenha.Location = new System.Drawing.Point(15, 210);
+            this.TXTconfirmarsenha.MaxLength = 20;
             this.TXTconfirmarsenha.Name = "TXTconfirmarsenha";
             this.TXTconfirmarsenha.PasswordChar = '*';
             this.TXTconfirmarsenha.Size = new System.Drawing.Size(170, 22);
@@ -201,7 +202,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(-99, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(-100, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 100);
             this.pictureBox1.TabIndex = 12;
@@ -211,7 +212,8 @@
             // 
             this.TXTsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTsenha.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTsenha.Location = new System.Drawing.Point(16, 182);
+            this.TXTsenha.Location = new System.Drawing.Point(15, 182);
+            this.TXTsenha.MaxLength = 20;
             this.TXTsenha.Name = "TXTsenha";
             this.TXTsenha.PasswordChar = '*';
             this.TXTsenha.Size = new System.Drawing.Size(170, 22);
@@ -221,18 +223,20 @@
             // 
             this.TXTmatricula.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTmatricula.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTmatricula.Location = new System.Drawing.Point(16, 152);
+            this.TXTmatricula.Location = new System.Drawing.Point(15, 152);
+            this.TXTmatricula.MaxLength = 20;
             this.TXTmatricula.Name = "TXTmatricula";
-            this.TXTmatricula.Size = new System.Drawing.Size(118, 22);
+            this.TXTmatricula.Size = new System.Drawing.Size(170, 22);
             this.TXTmatricula.TabIndex = 10;
             // 
             // TXTusuario
             // 
             this.TXTusuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTusuario.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTusuario.Location = new System.Drawing.Point(16, 124);
+            this.TXTusuario.Location = new System.Drawing.Point(15, 124);
+            this.TXTusuario.MaxLength = 15;
             this.TXTusuario.Name = "TXTusuario";
-            this.TXTusuario.Size = new System.Drawing.Size(170, 22);
+            this.TXTusuario.Size = new System.Drawing.Size(127, 22);
             this.TXTusuario.TabIndex = 8;
             // 
             // label4
@@ -241,7 +245,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(-49, 183);
+            this.label4.Location = new System.Drawing.Point(-50, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 7;
@@ -253,7 +257,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(-80, 156);
+            this.label3.Location = new System.Drawing.Point(-81, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 6;
@@ -265,7 +269,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(-64, 128);
+            this.label1.Location = new System.Drawing.Point(-65, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 18);
             this.label1.TabIndex = 4;
@@ -280,7 +284,7 @@
             this.BTNefetuarcadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNefetuarcadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.BTNefetuarcadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.BTNefetuarcadastro.Location = new System.Drawing.Point(32, 254);
+            this.BTNefetuarcadastro.Location = new System.Drawing.Point(31, 254);
             this.BTNefetuarcadastro.Name = "BTNefetuarcadastro";
             this.BTNefetuarcadastro.Size = new System.Drawing.Size(127, 41);
             this.BTNefetuarcadastro.TabIndex = 3;
@@ -295,7 +299,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.Info;
-            this.label5.Location = new System.Drawing.Point(-7, 31);
+            this.label5.Location = new System.Drawing.Point(-8, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(301, 73);
             this.label5.TabIndex = 13;
@@ -356,6 +360,7 @@
             this.TXTsenhaEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTsenhaEntrar.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTsenhaEntrar.Location = new System.Drawing.Point(27, 165);
+            this.TXTsenhaEntrar.MaxLength = 20;
             this.TXTsenhaEntrar.Name = "TXTsenhaEntrar";
             this.TXTsenhaEntrar.PasswordChar = '*';
             this.TXTsenhaEntrar.Size = new System.Drawing.Size(170, 22);
@@ -366,6 +371,7 @@
             this.TXTusuarioEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTusuarioEntrar.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTusuarioEntrar.Location = new System.Drawing.Point(27, 137);
+            this.TXTusuarioEntrar.MaxLength = 15;
             this.TXTusuarioEntrar.Name = "TXTusuarioEntrar";
             this.TXTusuarioEntrar.Size = new System.Drawing.Size(170, 22);
             this.TXTusuarioEntrar.TabIndex = 8;
@@ -470,9 +476,9 @@
             this.Controls.Add(this.BTNentrar);
             this.Controls.Add(this.tituloPaginaPrincipal);
             this.Controls.Add(this.iconPaginaPrincipal);
+            this.Controls.Add(this.PANELentrar);
             this.Controls.Add(this.PANELcadastrar);
             this.Controls.Add(this.PANELprincipal);
-            this.Controls.Add(this.PANELentrar);
             this.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -14,7 +14,7 @@ namespace CadernoVirtual
     public partial class FORMindividual : Form
     {
 
-        public string matriculaAntiga, usuarioAntigo, cadernoId;
+        public string matriculaAntiga, usuarioAntigo, cadernoId, turma;
         public FORMindividual(string login, string matricula)
         {
             InitializeComponent();
@@ -25,15 +25,17 @@ namespace CadernoVirtual
             LBLmat.Text = ("Matricula: " + matricula);
         }
 
+        //CONECTAR
         public MySqlCommand Conectar()
         {
             MySqlCommand cmd = new MySqlCommand
             {
-                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=")//Lembrar de alterar PWD: root
+                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")//Lembrar de alterar PWD: root
             };
             return cmd;
         }
 
+        //VERIFICAR NO BANCO
         public bool VerificarUsuario(string usuario)
         {
             MySqlCommand cmd = Conectar();
@@ -98,50 +100,52 @@ namespace CadernoVirtual
                 return false;
             }
 
-        }        
-
+        }
+        
+        //DESCONECTAR
         private void BTNsairusuario_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //ABRE PAINEIS
         private void BTNcriarCaderno_Click(object sender, EventArgs e)
         {
             PANELcriarCaderno.Visible = true;
+            PANELeditarCaderno.Visible = false;
             TXTturma.Clear();
             TXTano.Clear();
             TXTsenhaTurma.Clear();
             TXTconfirmarsenhaTurma.Clear();
         }
-
         private void BTNexcluirUsuario_Click(object sender, EventArgs e)
         {
             PANELexcluirAluno.Visible = true;
             PANELperfil.Visible = false;
             PANELeditarAluno.Visible = false;
         }
-
         private void BTNperfil_Click(object sender, EventArgs e)
         {
             PANELexcluirAluno.Visible = false;
             PANELperfil.Visible = true;
             PANELeditarAluno.Visible = false;
         }
-
         private void BTNeditarUsuario_Click(object sender, EventArgs e)
         {
             PANELexcluirAluno.Visible = false;
             PANELperfil.Visible = false;
             PANELeditarAluno.Visible = true;
         }
-
         private void BTNvoltar_Click(object sender, EventArgs e)
         {
+            PANELeditarCaderno.Visible = true;
             PANELcriarCaderno.Visible = false;
             TXTturma.Clear();
             TXTsenhaTurma.Clear();
         }
 
+
+        //EXCLUIR ALUNO
         private void BTNconfirmarExclur_Click(object sender, EventArgs e)
         {
             if (TXTmatExcluir.Text == string.Empty || TXTsenhaExcluir.Text == string.Empty)
@@ -155,7 +159,7 @@ namespace CadernoVirtual
                     MySqlCommand cmd = Conectar();
                     cmd.CommandText = "DELETE FROM aluno WHERE matricula = @matricula AND senha = @senha;";
                     cmd.Parameters.AddWithValue("@matricula", TXTmatExcluir.Text);
-                    cmd.Parameters.AddWithValue("@Autor", TXTsenhaExcluir.Text);                    
+                    cmd.Parameters.AddWithValue("@senha", TXTsenhaExcluir.Text);                    
 
                     erro = "Falha na conexão ao banco (Exclusão de aluno)";
                     cmd.Connection.Open();
@@ -167,7 +171,7 @@ namespace CadernoVirtual
                     MessageBox.Show("Aluno excluído com sucesso!");
                     TXTmatExcluir.Clear();
                     TXTsenhaExcluir.Clear();
-                    this.Close();
+                    this.Close();                    
                 }
                 catch
                 {
@@ -178,6 +182,59 @@ namespace CadernoVirtual
 
         }
 
+        //EDITAR CADERNO
+        private void BTNeditarCaderno_Click(object sender, EventArgs e)
+        {
+            if (TXTturmaCaderno.Text == string.Empty || TXTsenhaCaderno.Text == string.Empty || TXTanoCaderno.Text == string.Empty)
+                MessageBox.Show("Preencha todos os campos corretamente, verifique se não deixou algum dos campos vazio");
+
+            else
+            {
+                MySqlCommand cmd = Conectar();
+                cmd.CommandText = "SELECT * FROM caderno WHERE turma = @turma AND ano = @ano AND senha = @senha;";
+                cmd.Parameters.AddWithValue("@turma", TXTturmaCaderno.Text);
+                cmd.Parameters.AddWithValue("@ano", TXTanoCaderno.Text);
+                cmd.Parameters.AddWithValue("@senha", TXTsenhaCaderno.Text);
+                
+                string erro = "";
+                try
+                {
+                    erro = "Falha na conexão ao banco (Editar Caderno)";
+                    cmd.Connection.Open();
+                    erro = "Falha ao buscar Caderno";
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        Caderno c = new Caderno();
+                        c.id = dr.GetString(0);
+                        c.turma = dr.GetString(1);
+                        c.ano = dr.GetString(2);
+                        c.senha = dr.GetString(3);
+
+                        FORMcaderno caderno = new FORMcaderno();                        
+                        TXTturmaCaderno.Clear();
+                        TXTsenhaCaderno.Clear();
+                        TXTanoCaderno.Clear();
+                        caderno.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Turma, ano ou senha incorretos");
+                    }
+
+                    erro = "Falha ao fechar conexão";
+                    cmd.Connection.Close();
+                }
+                catch
+                {
+                    MessageBox.Show(erro);
+                }
+            }
+            
+        }
+
+        //EDITAR ALUNO
         private void BTNconfirmarEdicao_Click(object sender, EventArgs e)
         {
             if (TXTmatriculaEditar.Text == string.Empty || TXTusuarioEditar.Text == string.Empty || TXTsenhaEditar.Text == string.Empty || TXTconfirmarsenhaEditar.Text == string.Empty)
@@ -223,6 +280,7 @@ namespace CadernoVirtual
                             TXTsenhaEditar.Clear();
                             TXTconfirmarsenhaEditar.Clear();
                             PANELeditarAluno.Visible = false;
+                            PANELperfil.Visible = true;
                         }
                         catch
                         {
@@ -243,6 +301,7 @@ namespace CadernoVirtual
             }
         }
 
+        //CRIAR TURMA
         private void BTNcriarturma_Click(object sender, EventArgs e)
         {
             if (TXTturma.Text == string.Empty || TXTano.Text == string.Empty || TXTsenhaTurma.Text == string.Empty || TXTconfirmarsenhaTurma.Text == string.Empty)
@@ -287,6 +346,7 @@ namespace CadernoVirtual
                         TXTsenhaTurma.Clear();
                         TXTconfirmarsenhaTurma.Clear();
                         PANELcriarCaderno.Visible = false;
+                        PANELeditarCaderno.Visible = true;
                     }
                     catch
                     {

@@ -13,11 +13,13 @@ namespace CadernoVirtual
 {
     public partial class paginaInicial : Form
     {
+        //INICIALIZAÇÃO
         public paginaInicial()
         {
             InitializeComponent();
         }       
 
+        //VERIFICAÇÕES
         public bool VerificarUsuario (string usuario)
         {
             MySqlCommand cmd = Conectar();
@@ -56,15 +58,18 @@ namespace CadernoVirtual
             }
 
         }        
+
+        //CONECTAR
         public MySqlCommand Conectar()
         {
             MySqlCommand cmd = new MySqlCommand
             {
-                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=")//Lembrar de alterar PWD: root
+                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")//Lembrar de alterar PWD: root
             };
             return cmd;
         }       
 
+        //EXIBIR PAINEIS
         private void BTNcadastrar_Click(object sender, EventArgs e)
         {
             PANELcadastrar.Visible = true;
@@ -84,7 +89,7 @@ namespace CadernoVirtual
             PANELprincipal.Visible = false;
         }
 
-        //CADASTRO
+        //CADASTRO ALUNO
         private void BTNefetuarcadastro_Click(object sender, EventArgs e)
         {
             if (TXTmatricula.Text == string.Empty || TXTusuario.Text == string.Empty || TXTsenha.Text == string.Empty || TXTconfirmarsenha.Text == string.Empty)
@@ -190,8 +195,7 @@ namespace CadernoVirtual
             {
                 MessageBox.Show(erro);
             }           
-        }
-           
+        }     
         
 
     }
