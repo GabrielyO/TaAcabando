@@ -13,17 +13,18 @@ namespace CadernoVirtual
 {
     public partial class FORMeditarcaderno : Form
     {
-        public string idCadernoI, loginI, matriculaI, senhaI;
+        public string idCadernoI, loginI, matriculaI, senhaI, matNome;
 
         //INICIALIZAÇÕES
-        public FORMeditarcaderno(string id, string login, string matricula, string senha)
+        public FORMeditarcaderno(string idCaderno, string login, string matricula, string senha)
         {
             InitializeComponent();
-            idCadernoI = id;
+            idCadernoI = idCaderno;
             loginI = login;
             matriculaI = matricula;
             senhaI = senha;
-            tituloEditar.Text = "EDITAR CADERNO: " + id;
+            tituloEditar.Text = "EDITAR CADERNO: " + idCaderno;
+            PreencherCBmatCont();
         }
 
         //VERIFICAÇÕES
@@ -52,7 +53,7 @@ namespace CadernoVirtual
         {
             MySqlCommand cmd = Conectar();
             MySqlCommand cmd2 = Conectar();
-            cmd.CommandText = "SELECT DISTINCT(idMateria) FROM conteudo WHERE idCaderno = @idCaderno;";
+            cmd.CommandText = "SELECT DISTINCT(nome) FROM conteudo WHERE idCaderno = @idCaderno;";
             cmd.Parameters.AddWithValue("@idCaderno", id);
 
             string erro = "";
@@ -62,19 +63,59 @@ namespace CadernoVirtual
                 erro = "Falha na conexão ao banco (Editar Caderno)";
                 cmd.Connection.Open();
                 erro = "Falha ao buscar na tabela Caderno";
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    string mat;
+                    while (dr.Read())
+                    {
+                        cmd2.CommandText = "SELECT DISTINCT Count(idCaderno) FROM conteudo WHERE nome = @nome;";
+                        mat = dr.GetString(0);
+
+                        cmd2.Parameters.Clear();
+                        cmd2.Parameters.AddWithValue("@nome", mat.ToString());
+
+                        cmd2.Connection.Open();
+                        int num = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
+
+                        if (num <= 1)
+                        {
+                            CBmateriaEx.Items.Add(mat);
+                        }
+                        cmd2.Connection.Close();
+                        erro = "Falha ao fechar conexão";
+                    }
+
+                    cmd.Connection.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show(erro);
+            }
+        }
+        //PREENCHER CBCADERNO
+        public void PreencherCBmatCont()
+        {
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT nome FROM materia";
+
+            string erro = "";
+            try
+            {
+                CBmateria.Items.Clear();
+                erro = "Falha na conexão ao banco (Editar Caderno)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar na tabela Caderno";
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
-                    cmd2.CommandText = "SELECT DISTINCT Count(idCaderno) FROM conteudo WHERE idMateria = @idMateria;";
-                    cmd2.Parameters.AddWithValue("@idMateria", dr.GetString(0));
-                    cmd2.Connection.Open();
-                    if (Convert.ToInt32(cmd2.ExecuteScalar().ToString()) == 1)
-                    {
-                        CBmateriaEx.Items.Add(dr.GetString(0));
-                        cmd2.Connection.Close();
-                    }
-                    else cmd2.Connection.Close();                    
+                    matNome = dr.GetString(0);
+                    CBmateria.Items.Add(matNome);
+
                 }
 
                 erro = "Falha ao fechar conexão";
@@ -86,8 +127,8 @@ namespace CadernoVirtual
             }
         }
 
-        //CONECTAR
-        public MySqlCommand Conectar()
+            //CONECTAR
+            public MySqlCommand Conectar()
         {
             MySqlCommand cmd = new MySqlCommand
             {
@@ -132,18 +173,32 @@ namespace CadernoVirtual
                 try
                 {
                     MySqlCommand cmd = Conectar();
-                    cmd.CommandText = "DELETE FROM materia WHERE idMateria = @idMateria;";
-                    cmd.Parameters.AddWithValue("@idMatricula", CBmateriaEx.Text);
+                    MySqlCommand cmd2 = Conectar();
+                    cmd.CommandText = "DELETE FROM materia WHERE nome = @nome;";
+                    cmd.Parameters.AddWithValue("@nome", CBmateriaEx.Text);
 
-                    erro = "Falha na conexão ao banco (Exclusão de aluno)";
+                    erro = "Falha na conexão ao banco (Exclusão de aluno)1";
                     cmd.Connection.Open();
-                    erro = "Digite a senha e a matrícula correta!";
+                    erro = "Digite a senha e a matrícula correta1!";
                     cmd.ExecuteNonQuery();
-                    erro = "Falha ao fechar conexão";
+                    erro = "Falha ao fechar conexão1";
                     cmd.Connection.Close();
+
+                    cmd2.CommandText = "DELETE FROM conteudo WHERE nome = @nome;";
+                    cmd2.Parameters.AddWithValue("@nome", CBmateriaEx.Text);
+                    erro = "Falha na conexão ao banco (Exclusão de aluno)2";
+                    cmd2.Connection.Open();
+                    erro = "Digite a senha e a matrícula correta!2";
+                    cmd2.ExecuteNonQuery();
+                    erro = "Falha ao fechar conexão2";
+                    cmd2.Connection.Close();
 
                     MessageBox.Show("Matéria excluída com sucesso!");
                     CBmateriaEx.Text = "";
+
+                    CBmateria.Items.Clear();
+                    PreencherCBmatCont();
+                    PreencherCBmaterias(idCadernoI);
                 }
                 catch
                 {

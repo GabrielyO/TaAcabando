@@ -53,24 +53,20 @@ INSERT INTO `caderno` (`idCaderno`, `turma`, `ano`, `senha`) VALUES
 CREATE TABLE IF NOT EXISTS `conteudo` (
   `idConteudo` char(80) NOT NULL,
   `idCaderno` char(80) NOT NULL,
-  `idMateria` char(20) NOT NULL,
+  `nome` char(20) NOT NULL,
   `titulo` char(30) NOT NULL,
   `conteudo` longtext NOT NULL,
   PRIMARY KEY (`idConteudo`),
   KEY `idCaderno` (`idCaderno`),
-  KEY `idMateria` (`idMateria`),
+  KEY `idMateria` (`nome`),
   KEY `idConteudo` (`idConteudo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela caderno.conteudo: ~6 rows (aproximadamente)
+-- Copiando dados para a tabela caderno.conteudo: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `conteudo` DISABLE KEYS */;
-INSERT INTO `conteudo` (`idConteudo`, `idCaderno`, `idMateria`, `titulo`, `conteudo`) VALUES
-	('cc', 'in307/2017', 'IDFÍSICA', 'TA ACABANDO', 'DGSDGGSDGDFGFDGDF'),
-	('ds', 'in108/2017', 'IDFÍSICA', 'sdfs', 'dsfsdfsdf'),
-	('fa', 'in307/2017', 'IDBIOLOGIA', 'zfzsd', 'jsfjsd'),
-	('fsafas', 'in307/2017', 'IDLITERATURA', 'sfas', 'afasfs'),
-	('fsf', 'in108/2017', 'IDBIOLOGIA', 'afa', 'efds'),
-	('sdkfkjsd', 'in307/2017', 'IDQUÍMICA', 'asfas', 'jbasfjas');
+INSERT INTO `conteudo` (`idConteudo`, `idCaderno`, `nome`, `titulo`, `conteudo`) VALUES
+	('cc', 'in307/2017', 'FÍSICA', 'TA ACABANDO', 'DGSDGGSDGDFGFDGDF'),
+	('fs', 'in108/2017', 'FÍSICA', 'dsgds', 'dssdg');
 /*!40000 ALTER TABLE `conteudo` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela caderno.materia
@@ -78,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `materia` (
   `idMateria` char(20) NOT NULL,
   `nome` char(15) NOT NULL,
   PRIMARY KEY (`idMateria`),
-  KEY `idMateria` (`idMateria`)
+  KEY `nome` (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela caderno.materia: ~4 rows (aproximadamente)
@@ -86,8 +82,8 @@ CREATE TABLE IF NOT EXISTS `materia` (
 INSERT INTO `materia` (`idMateria`, `nome`) VALUES
 	('IDBIOLOGIA', 'BIOLOGIA'),
 	('IDFÍSICA', 'FÍSICA'),
-	('IDLITERATURA', 'LITERATURA'),
-	('IDQUÍMICA', 'QUÍMICA');
+	('IDQUÍMICA', 'QUÍMICA'),
+	('IDSOCIOLOGIA', 'SOCIOLOGIA');
 /*!40000 ALTER TABLE `materia` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
