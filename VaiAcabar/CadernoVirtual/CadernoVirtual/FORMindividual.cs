@@ -42,7 +42,6 @@ namespace CadernoVirtual
         //PREENCHER CBCADERNO
         public void PreencherCBs()
         {
-
             //CBCADERNO
             MySqlCommand cmd = Conectar();
             cmd.CommandText = "SELECT idCaderno FROM caderno";
@@ -256,53 +255,53 @@ namespace CadernoVirtual
         //EDITAR CADERNO
         private void BTNeditarCaderno_Click(object sender, EventArgs e)
         {
-            if (TXTturmaCaderno.Text == string.Empty || TXTsenhaCaderno.Text == string.Empty || TXTanoCaderno.Text == string.Empty)
-                MessageBox.Show("Preencha todos os campos corretamente, verifique se não deixou algum dos campos vazio");
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT * FROM caderno WHERE turma = @turma AND ano = @ano AND senha = @senha;";
+            cmd.Parameters.AddWithValue("@turma", TXTturmaCaderno.Text);
+            cmd.Parameters.AddWithValue("@ano", TXTanoCaderno.Text);
+            cmd.Parameters.AddWithValue("@senha", TXTsenhaCaderno.Text); 
 
-            else
+            string erro = "";
+            try
             {
-                MySqlCommand cmd = Conectar();
-                cmd.CommandText = "SELECT * FROM caderno WHERE turma = @turma AND ano = @ano AND senha = @senha;";
-                cmd.Parameters.AddWithValue("@turma", TXTturmaCaderno.Text);
-                cmd.Parameters.AddWithValue("@ano", TXTanoCaderno.Text);
-                cmd.Parameters.AddWithValue("@senha", TXTsenhaCaderno.Text);
-                
-                string erro = "";
-                try
+                erro = "Falha na conexão ao banco (Editar Caderno)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar caderno";
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
                 {
-                    erro = "Falha na conexão ao banco (Editar Caderno)";
-                    cmd.Connection.Open();
-                    erro = "Falha ao buscar Caderno";
-                    MySqlDataReader dr = cmd.ExecuteReader();
+                    Caderno c = new Caderno();
+                    c.idCaderno = dr.GetString(0);
+                    c.turma = dr.GetString(1);
+                    c.ano = dr.GetString(2);
+                    c.senha = dr.GetString(3);
 
-                    if (dr.Read())
-                    {
-                        Caderno c = new Caderno();
-                        c.id = dr.GetString(0);
-                        c.turma = dr.GetString(1);
-                        c.ano = dr.GetString(2);
-                        c.senha = dr.GetString(3);
+                    idCaderno = dr.GetString(0);
 
-                        FORMcaderno caderno = new FORMcaderno();                        
-                        TXTturmaCaderno.Clear();
-                        TXTsenhaCaderno.Clear();
-                        TXTanoCaderno.Clear();
-                        caderno.Show();
-                    }
+                    FORMeditarcaderno editarCaderno = new FORMeditarcaderno(idCaderno, usuarioAntigo, matriculaAntiga, senhaAntiga);
+                    TXTturmaCaderno.Clear();
+                    TXTanoCaderno.Clear();
+                    TXTsenhaCaderno.Clear();
+                    editarCaderno.Show();
+                    this.Close();
+                }
+                else
+                {
+                    if (TXTturmaCaderno.Text == string.Empty || TXTanoCaderno.Text == string.Empty || TXTsenhaCaderno.Text == string.Empty)
+                        MessageBox.Show("Preencha todos os campos corretamente, verifique se não deixou algum dos campos vazio");
+
                     else
-                    {
                         MessageBox.Show("Turma, ano ou senha incorretos");
-                    }
+                }
 
-                    erro = "Falha ao fechar conexão";
-                    cmd.Connection.Close();
-                }
-                catch
-                {
-                    MessageBox.Show(erro);
-                }
+                erro = "Falha ao fechar conexão";
+                cmd.Connection.Close();
             }
-            
+            catch
+            {
+                MessageBox.Show(erro);
+            }
         }
 
         //EDITAR ALUNO
@@ -395,12 +394,12 @@ namespace CadernoVirtual
 
                     Caderno c = new Caderno();
 
-                    c.id = cadernoId;
+                    c.idCaderno = cadernoId;
                     c.turma = TXTturma.Text;
                     c.ano = TXTano.Text;
                     c.senha = TXTsenhaTurma.Text;
 
-                    cmd.Parameters.AddWithValue("@id", c.id);
+                    cmd.Parameters.AddWithValue("@id", c.idCaderno);
                     cmd.Parameters.AddWithValue("@turma", c.turma);
                     cmd.Parameters.AddWithValue("@ano", c.ano);
                     cmd.Parameters.AddWithValue("@senha", c.senha);

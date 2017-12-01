@@ -177,7 +177,7 @@ namespace CadernoVirtual
                     FORMindividual formindividual = new FORMindividual(a.usuario, a.matricula, a.senha);
                     TXTusuarioEntrar.Clear();
                     TXTsenhaEntrar.Clear();
-                    formindividual.Show();                  
+                    formindividual.Show();
                 }
                 else
                 {

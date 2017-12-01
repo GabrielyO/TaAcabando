@@ -8,7 +8,7 @@ namespace CadernoVirtual
 {
     public class Caderno
     {
-        public string id { get; set; }
+        public string idCaderno { get; set; }
         public string turma { get; set; }
         public string ano { get; set; }
         public string senha { get; set; }

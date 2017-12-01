@@ -34,20 +34,19 @@ INSERT INTO `aluno` (`matricula`, `usuario`, `senha`) VALUES
 -- Copiando estrutura para tabela caderno.caderno
 CREATE TABLE IF NOT EXISTS `caderno` (
   `idCaderno` char(30) NOT NULL,
-  `idMateria` char(30) DEFAULT NULL,
   `turma` char(15) NOT NULL DEFAULT '0',
   `ano` char(15) NOT NULL DEFAULT '0',
   `senha` char(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idCaderno`),
-  KEY `idCaderno` (`idCaderno`),
-  KEY `idMateria` (`idMateria`)
+  KEY `idCaderno` (`idCaderno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela caderno.caderno: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela caderno.caderno: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `caderno` DISABLE KEYS */;
-INSERT INTO `caderno` (`idCaderno`, `idMateria`, `turma`, `ano`, `senha`) VALUES
-	('in108/2017', NULL, 'in108', '2017', '123'),
-	('in307/2017', NULL, 'in307', '2017', '123');
+INSERT INTO `caderno` (`idCaderno`, `turma`, `ano`, `senha`) VALUES
+	('IN106/2017', 'IN106', '2017', '123'),
+	('in108/2017', 'in108', '2017', '123'),
+	('in307/2017', 'in307', '2017', '123');
 /*!40000 ALTER TABLE `caderno` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela caderno.conteudo
@@ -63,8 +62,15 @@ CREATE TABLE IF NOT EXISTS `conteudo` (
   KEY `idConteudo` (`idConteudo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela caderno.conteudo: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela caderno.conteudo: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `conteudo` DISABLE KEYS */;
+INSERT INTO `conteudo` (`idConteudo`, `idCaderno`, `idMateria`, `titulo`, `conteudo`) VALUES
+	('cc', 'in307/2017', 'IDFÍSICA', 'TA ACABANDO', 'DGSDGGSDGDFGFDGDF'),
+	('ds', 'in108/2017', 'IDFÍSICA', 'sdfs', 'dsfsdfsdf'),
+	('fa', 'in307/2017', 'IDBIOLOGIA', 'zfzsd', 'jsfjsd'),
+	('fsafas', 'in307/2017', 'IDLITERATURA', 'sfas', 'afasfs'),
+	('fsf', 'in108/2017', 'IDBIOLOGIA', 'afa', 'efds'),
+	('sdkfkjsd', 'in307/2017', 'IDQUÍMICA', 'asfas', 'jbasfjas');
 /*!40000 ALTER TABLE `conteudo` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela caderno.materia
@@ -78,10 +84,10 @@ CREATE TABLE IF NOT EXISTS `materia` (
 -- Copiando dados para a tabela caderno.materia: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `materia` DISABLE KEYS */;
 INSERT INTO `materia` (`idMateria`, `nome`) VALUES
-	('GEO', 'GEOGRAFIA'),
-	('HIS\r\n', 'HISTÓRIA'),
-	('MAT', 'MATEMÁTICA'),
-	('POR', 'PORTUGUÊS');
+	('IDBIOLOGIA', 'BIOLOGIA'),
+	('IDFÍSICA', 'FÍSICA'),
+	('IDLITERATURA', 'LITERATURA'),
+	('IDQUÍMICA', 'QUÍMICA');
 /*!40000 ALTER TABLE `materia` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

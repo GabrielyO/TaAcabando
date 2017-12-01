@@ -50,11 +50,17 @@
   <ItemGroup>
     <Compile Include="Aluno.cs" />
     <Compile Include="Caderno.cs" />
-    <Compile Include="FORMcaderno.cs">
+    <Compile Include="FORMconteudo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMcaderno.Designer.cs">
-      <DependentUpon>FORMcaderno.cs</DependentUpon>
+    <Compile Include="FORMconteudo.Designer.cs">
+      <DependentUpon>FORMconteudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMeditarcaderno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMeditarcaderno.designer.cs">
+      <DependentUpon>FORMeditarcaderno.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMindividual.cs">
       <SubType>Form</SubType>
@@ -68,10 +74,14 @@
     <Compile Include="FORMprincipal.Designer.cs">
       <DependentUpon>FORMprincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materia.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FORMcaderno.resx">
-      <DependentUpon>FORMcaderno.cs</DependentUpon>
+    <EmbeddedResource Include="FORMconteudo.resx">
+      <DependentUpon>FORMconteudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMeditarcaderno.resx">
+      <DependentUpon>FORMeditarcaderno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMindividual.resx">
       <DependentUpon>FORMindividual.cs</DependentUpon>

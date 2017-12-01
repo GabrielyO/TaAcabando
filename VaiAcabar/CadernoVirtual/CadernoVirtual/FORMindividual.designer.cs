@@ -194,10 +194,10 @@
             this.PANELinfoPerfil.Controls.Add(this.tituloApresentacao);
             this.PANELinfoPerfil.Controls.Add(this.BTNperfil);
             this.PANELinfoPerfil.Controls.Add(this.PANELexcluirAluno);
-            this.PANELinfoPerfil.Controls.Add(this.PANELcriarCaderno);
             this.PANELinfoPerfil.Controls.Add(this.PANELeditarCaderno);
             this.PANELinfoPerfil.Controls.Add(this.PANELperfil);
             this.PANELinfoPerfil.Controls.Add(this.PANELeditarAluno);
+            this.PANELinfoPerfil.Controls.Add(this.PANELcriarCaderno);
             this.PANELinfoPerfil.Location = new System.Drawing.Point(12, 12);
             this.PANELinfoPerfil.Name = "PANELinfoPerfil";
             this.PANELinfoPerfil.Size = new System.Drawing.Size(575, 817);
