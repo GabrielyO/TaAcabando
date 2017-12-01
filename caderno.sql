@@ -43,13 +43,11 @@ CREATE TABLE IF NOT EXISTS `caderno` (
   KEY `idMateria` (`idMateria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela caderno.caderno: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela caderno.caderno: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `caderno` DISABLE KEYS */;
 INSERT INTO `caderno` (`idCaderno`, `idMateria`, `turma`, `ano`, `senha`) VALUES
-	('in1062015', NULL, 'in106', '2015', 'primeiro'),
-	('in1062017', NULL, 'in106', '2017', '123'),
-	('in2072017', NULL, 'in207', '2017', '123'),
-	('in3072017', NULL, 'in307', '2017', 'toppers');
+	('in108/2017', NULL, 'in108', '2017', '123'),
+	('in307/2017', NULL, 'in307', '2017', '123');
 /*!40000 ALTER TABLE `caderno` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela caderno.conteudo

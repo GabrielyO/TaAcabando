@@ -25,6 +25,8 @@ namespace CadernoVirtual
             tituloApresentacao.Text = ("Bem vindo, "+ login);
             LBLuser.Text = ("Usuário: " + login);
             LBLmat.Text = ("Matricula: " + matricula);
+
+            PreencherCBs();
         }
 
         //CONECTAR
@@ -35,6 +37,67 @@ namespace CadernoVirtual
                 Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")//Lembrar de alterar PWD: root
             };
             return cmd;
+        }
+
+        //PREENCHER CBCADERNO
+        public void PreencherCBs()
+        {
+
+            //CBCADERNO
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT idCaderno FROM caderno";
+
+            string erro = "";
+            try
+            {
+                CBidCaderno.Items.Clear();
+                erro = "Falha na conexão ao banco (Editar Caderno)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar na tabela Caderno";
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    idCaderno = dr.GetString(0);
+                    CBidCaderno.Items.Add(idCaderno);
+
+                }
+
+                erro = "Falha ao fechar conexão";
+                cmd.Connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show(erro);
+            }
+
+            //CBMATERIAS
+            cmd.CommandText = "SELECT DISTINCT(nome) FROM materia";
+
+            erro = "";
+            try
+            {
+                CBmateria.Items.Clear();
+                erro = "Falha na conexão ao banco (Editar Caderno)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar na tabela Caderno";
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    nomeMateria = dr.GetString(0);
+                    CBmateria.Items.Add(nomeMateria);
+                }
+
+                erro = "Falha ao fechar conexão";
+                cmd.Connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show(erro);
+            }
+
+
         }
 
         //VERIFICAR NO BANCO
@@ -147,78 +210,6 @@ namespace CadernoVirtual
             TXTsenhaTurma.Clear();
         }
 
-        private void CBidCaderno_Click(object sender, EventArgs e)
-        {
-            if(CBmateria.Text == string.Empty)
-            {
-                MySqlCommand cmd = Conectar();
-                cmd.CommandText = "SELECT idCaderno FROM caderno";
-
-                string erro = "";
-                try
-                {
-                    CBidCaderno.Items.Clear();
-                    erro = "Falha na conexão ao banco (Editar Caderno)";
-                    cmd.Connection.Open();
-                    erro = "Falha ao buscar na tabela Caderno";
-                    MySqlDataReader dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        idCaderno = dr.GetString(0);
-                        CBidCaderno.Items.Add(idCaderno);
-
-                    }
-
-                    erro = "Falha ao fechar conexão";
-                    cmd.Connection.Close();
-                }
-                catch
-                {
-                    MessageBox.Show(erro);
-                }
-            }
-        }
-
-        //COMBO BOX MATÉRIAS
-        private void CBmateria_Click(object sender, EventArgs e)
-        {
-            if (CBidCaderno.Text == string.Empty)
-            {
-                MySqlCommand cmd = Conectar();
-                cmd.CommandText = "SELECT DISTINCT(nome) FROM materia";
-
-                string erro = "";
-                try
-                {
-                    CBmateria.Items.Clear();
-                    erro = "Falha na conexão ao banco (Editar Caderno)";
-                    cmd.Connection.Open();
-                    erro = "Falha ao buscar na tabela Caderno";
-                    MySqlDataReader dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        nomeMateria = dr.GetString(0);
-                        CBmateria.Items.Add(nomeMateria);
-                    }
-
-                    erro = "Falha ao fechar conexão";
-                    cmd.Connection.Close();
-                }
-                catch
-                {
-                    MessageBox.Show(erro);
-                }
-            }
-
-            else
-            {
-
-            }
-    }
-
-
         //EXCLUIR ALUNO
         private void BTNconfirmarExclur_Click(object sender, EventArgs e)
         {
@@ -260,13 +251,7 @@ namespace CadernoVirtual
                 }                
             }
 
-        }
-
-        private void LISTA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
- 
+        } 
 
         //EDITAR CADERNO
         private void BTNeditarCaderno_Click(object sender, EventArgs e)
@@ -391,7 +376,7 @@ namespace CadernoVirtual
             }
         }
 
-        //CRIAR TURMA
+        //CRIAR CADERNO TURMA
         private void BTNcriarturma_Click(object sender, EventArgs e)
         {
             if (TXTturma.Text == string.Empty || TXTano.Text == string.Empty || TXTsenhaTurma.Text == string.Empty || TXTconfirmarsenhaTurma.Text == string.Empty)
@@ -402,7 +387,7 @@ namespace CadernoVirtual
 
             else
             {
-                cadernoId = TXTturma.Text + TXTano.Text;
+                cadernoId = TXTturma.Text + "/" + TXTano.Text;
                 if (VerificarCaderno(cadernoId) == false)
                 {
                     MySqlCommand cmd = Conectar();
@@ -431,6 +416,7 @@ namespace CadernoVirtual
                         cmd.Connection.Close();
 
                         MessageBox.Show("Caderno cadastrado com sucesso");
+                        PreencherCBs();
                         TXTturma.Clear();
                         TXTano.Clear();
                         TXTsenhaTurma.Clear();
