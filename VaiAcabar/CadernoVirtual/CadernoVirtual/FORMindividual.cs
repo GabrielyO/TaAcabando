@@ -14,59 +14,17 @@ namespace CadernoVirtual
     public partial class FORMindividual : Form
     {
 
-        public string matriculaAntiga, usuarioAntigo, cadernoId, turma;
+        public string matriculaAntiga, usuarioAntigo, cadernoId, turma, idCaderno, nomeMateria, senhaAntiga;
 
-        public FORMindividual(string login, string matricula)
+        public FORMindividual(string login, string matricula, string senha)
         {
             InitializeComponent();
             matriculaAntiga = matricula;
             usuarioAntigo = login;
+            senhaAntiga = senha;
             tituloApresentacao.Text = ("Bem vindo, "+ login);
             LBLuser.Text = ("Usuário: " + login);
             LBLmat.Text = ("Matricula: " + matricula);
-
-            //BANCO DE DADDOS
-
-            MySqlCommand cmd = Conectar();
-            cmd.CommandText = "SELECT turma, ano FROM caderno";
-
-            //string erro = "";
-            //try
-            //{
-            //    erro = "Falha na conexão ao banco (Editar Caderno)";
-            //    cmd.Connection.Open();
-            //    erro = "Falha ao buscar Caderno";
-            //    MySqlDataReader dr = cmd.ExecuteReader();
-
-            //    if (dr.Read())
-            //    {
-            //        Caderno c = new Caderno();
-            //        c.id = dr.GetString(0);
-            //        c.turma = dr.GetString(1);
-            //        c.ano = dr.GetString(2);
-            //        c.senha = dr.GetString(3);
-
-            //        FORMcaderno caderno = new FORMcaderno();
-            //        TXTturmaCaderno.Clear();
-            //        TXTsenhaCaderno.Clear();
-            //        TXTanoCaderno.Clear();
-            //        caderno.Show();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Turma, ano ou senha incorretos");
-            //    }
-
-            //    erro = "Falha ao fechar conexão";
-            //    cmd.Connection.Close();
-            //}
-            //catch
-            //{
-            //    MessageBox.Show(erro);
-            //}
-
-
-
         }
 
         //CONECTAR
@@ -167,6 +125,7 @@ namespace CadernoVirtual
             PANELexcluirAluno.Visible = true;
             PANELperfil.Visible = false;
             PANELeditarAluno.Visible = false;
+            TXTmatExcluir.Text = matriculaAntiga;
         }
         private void BTNperfil_Click(object sender, EventArgs e)
         {
@@ -188,6 +147,77 @@ namespace CadernoVirtual
             TXTsenhaTurma.Clear();
         }
 
+        private void CBidCaderno_Click(object sender, EventArgs e)
+        {
+            if(CBmateria.Text == string.Empty)
+            {
+                MySqlCommand cmd = Conectar();
+                cmd.CommandText = "SELECT idCaderno FROM caderno";
+
+                string erro = "";
+                try
+                {
+                    CBidCaderno.Items.Clear();
+                    erro = "Falha na conexão ao banco (Editar Caderno)";
+                    cmd.Connection.Open();
+                    erro = "Falha ao buscar na tabela Caderno";
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        idCaderno = dr.GetString(0);
+                        CBidCaderno.Items.Add(idCaderno);
+
+                    }
+
+                    erro = "Falha ao fechar conexão";
+                    cmd.Connection.Close();
+                }
+                catch
+                {
+                    MessageBox.Show(erro);
+                }
+            }
+        }
+
+        //COMBO BOX MATÉRIAS
+        private void CBmateria_Click(object sender, EventArgs e)
+        {
+            if (CBidCaderno.Text == string.Empty)
+            {
+                MySqlCommand cmd = Conectar();
+                cmd.CommandText = "SELECT DISTINCT(nome) FROM materia";
+
+                string erro = "";
+                try
+                {
+                    CBmateria.Items.Clear();
+                    erro = "Falha na conexão ao banco (Editar Caderno)";
+                    cmd.Connection.Open();
+                    erro = "Falha ao buscar na tabela Caderno";
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        nomeMateria = dr.GetString(0);
+                        CBmateria.Items.Add(nomeMateria);
+                    }
+
+                    erro = "Falha ao fechar conexão";
+                    cmd.Connection.Close();
+                }
+                catch
+                {
+                    MessageBox.Show(erro);
+                }
+            }
+
+            else
+            {
+
+            }
+    }
+
 
         //EXCLUIR ALUNO
         private void BTNconfirmarExclur_Click(object sender, EventArgs e)
@@ -200,31 +230,43 @@ namespace CadernoVirtual
                 string erro = "";
                 try
                 {
-                    MySqlCommand cmd = Conectar();
-                    cmd.CommandText = "DELETE FROM aluno WHERE matricula = @matricula AND senha = @senha;";
-                    cmd.Parameters.AddWithValue("@matricula", TXTmatExcluir.Text);
-                    cmd.Parameters.AddWithValue("@senha", TXTsenhaExcluir.Text);                    
+                    if(TXTsenhaExcluir.Text == senhaAntiga)
+                    {
+                        MySqlCommand cmd = Conectar();
+                        cmd.CommandText = "DELETE FROM aluno WHERE matricula = @matricula AND senha = @senha;";
+                        cmd.Parameters.AddWithValue("@matricula", TXTmatExcluir.Text);
+                        cmd.Parameters.AddWithValue("@senha", TXTsenhaExcluir.Text);
 
-                    erro = "Falha na conexão ao banco (Exclusão de aluno)";
-                    cmd.Connection.Open();
-                    erro = "Digite a senha e a matrícula correta!";
-                    cmd.ExecuteNonQuery();
-                    erro = "Falha ao fechar conexão";
-                    cmd.Connection.Close();
+                        erro = "Falha na conexão ao banco (Exclusão de aluno)";
+                        cmd.Connection.Open();
+                        erro = "Digite a senha e a matrícula correta!";
+                        cmd.ExecuteNonQuery();
+                        erro = "Falha ao fechar conexão";
+                        cmd.Connection.Close();
 
-                    MessageBox.Show("Aluno excluído com sucesso!");
-                    TXTmatExcluir.Clear();
-                    TXTsenhaExcluir.Clear();
-                    this.Close();                    
+                        MessageBox.Show("Aluno excluído com sucesso!");
+                        TXTmatExcluir.Clear();
+                        TXTsenhaExcluir.Clear();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senha incorreta!");
+                    }                                        
                 }
                 catch
                 {
                     MessageBox.Show(erro);
-                }
-                
+                }                
             }
 
         }
+
+        private void LISTA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+ 
 
         //EDITAR CADERNO
         private void BTNeditarCaderno_Click(object sender, EventArgs e)
@@ -317,6 +359,10 @@ namespace CadernoVirtual
                             tituloApresentacao.Text = ("Bem vindo, " + a.usuario);
                             LBLuser.Text = ("Usuário: " + a.usuario);
                             LBLmat.Text = ("Matricula: " + a.matricula);
+
+                            matriculaAntiga = TXTmatriculaEditar.Text;
+                            usuarioAntigo = TXTusuarioEditar.Text;
+                            senhaAntiga = TXTsenhaEditar.Text;
 
                             MessageBox.Show("Aluno editado com sucesso");
                             TXTmatriculaEditar.Clear();
