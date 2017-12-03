@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Aluno.cs" />
     <Compile Include="Caderno.cs" />
+    <Compile Include="Conteudo.cs" />
     <Compile Include="FORMconteudo.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,8 +12,9 @@ namespace CadernoVirtual
 {
     public partial class FORMconteudo : Form
     {
-        public FORMconteudo()
+        public FORMconteudo(string c)
         {
+            txtC.Text = c;
             InitializeComponent();
         }
     }

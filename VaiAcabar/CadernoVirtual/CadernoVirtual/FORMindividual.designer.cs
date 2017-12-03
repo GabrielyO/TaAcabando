@@ -41,6 +41,9 @@
             this.TXTmatExcluir = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.PANELperfil = new System.Windows.Forms.Panel();
+            this.LBLmat = new System.Windows.Forms.Label();
+            this.LBLuser = new System.Windows.Forms.Label();
             this.PANELcriarCaderno = new System.Windows.Forms.Panel();
             this.BTNvoltar = new System.Windows.Forms.Button();
             this.lblConfirmarSenhaTurma = new System.Windows.Forms.Label();
@@ -64,9 +67,6 @@
             this.BTNeditarCaderno = new System.Windows.Forms.Button();
             this.lblTurma = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.PANELperfil = new System.Windows.Forms.Panel();
-            this.LBLmat = new System.Windows.Forms.Label();
-            this.LBLuser = new System.Windows.Forms.Label();
             this.PANELeditarAluno = new System.Windows.Forms.Panel();
             this.BTNconfirmarEdicao = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,27 +78,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.filtro = new System.Windows.Forms.GroupBox();
+            this.BTNlimpar = new System.Windows.Forms.Button();
+            this.BTNtudo = new System.Windows.Forms.Button();
             this.LISTA = new System.Windows.Forms.ListView();
             this.cTurma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cAno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cMatéria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cTítulo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label11 = new System.Windows.Forms.Label();
             this.CBmateria = new System.Windows.Forms.ComboBox();
             this.TXTconteudo = new System.Windows.Forms.TextBox();
             this.BTNabrirConteudo = new System.Windows.Forms.Button();
             this.BTNbuscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TXTtituloBusca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.CBidCaderno = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.PANELinfoPerfil.SuspendLayout();
             this.PANELexcluirAluno.SuspendLayout();
+            this.PANELperfil.SuspendLayout();
             this.PANELcriarCaderno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PANELeditarCaderno.SuspendLayout();
-            this.PANELperfil.SuspendLayout();
             this.PANELeditarAluno.SuspendLayout();
             this.filtro.SuspendLayout();
             this.SuspendLayout();
@@ -194,10 +194,10 @@
             this.PANELinfoPerfil.Controls.Add(this.tituloApresentacao);
             this.PANELinfoPerfil.Controls.Add(this.BTNperfil);
             this.PANELinfoPerfil.Controls.Add(this.PANELexcluirAluno);
-            this.PANELinfoPerfil.Controls.Add(this.PANELeditarCaderno);
             this.PANELinfoPerfil.Controls.Add(this.PANELperfil);
-            this.PANELinfoPerfil.Controls.Add(this.PANELeditarAluno);
             this.PANELinfoPerfil.Controls.Add(this.PANELcriarCaderno);
+            this.PANELinfoPerfil.Controls.Add(this.PANELeditarCaderno);
+            this.PANELinfoPerfil.Controls.Add(this.PANELeditarAluno);
             this.PANELinfoPerfil.Location = new System.Drawing.Point(12, 12);
             this.PANELinfoPerfil.Name = "PANELinfoPerfil";
             this.PANELinfoPerfil.Size = new System.Drawing.Size(575, 817);
@@ -232,9 +232,9 @@
             this.PANELexcluirAluno.Controls.Add(this.TXTmatExcluir);
             this.PANELexcluirAluno.Controls.Add(this.label8);
             this.PANELexcluirAluno.Controls.Add(this.label9);
-            this.PANELexcluirAluno.Location = new System.Drawing.Point(30, 256);
+            this.PANELexcluirAluno.Location = new System.Drawing.Point(36, 230);
             this.PANELexcluirAluno.Name = "PANELexcluirAluno";
-            this.PANELexcluirAluno.Size = new System.Drawing.Size(517, 248);
+            this.PANELexcluirAluno.Size = new System.Drawing.Size(511, 204);
             this.PANELexcluirAluno.TabIndex = 12;
             this.PANELexcluirAluno.Visible = false;
             // 
@@ -263,7 +263,7 @@
             // 
             this.TXTsenhaExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTsenhaExcluir.Font = new System.Drawing.Font("Georgia", 11F);
-            this.TXTsenhaExcluir.Location = new System.Drawing.Point(208, 95);
+            this.TXTsenhaExcluir.Location = new System.Drawing.Point(205, 95);
             this.TXTsenhaExcluir.MaxLength = 20;
             this.TXTsenhaExcluir.Name = "TXTsenhaExcluir";
             this.TXTsenhaExcluir.PasswordChar = '*';
@@ -275,7 +275,7 @@
             this.TXTmatExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTmatExcluir.Enabled = false;
             this.TXTmatExcluir.Font = new System.Drawing.Font("Georgia", 12F);
-            this.TXTmatExcluir.Location = new System.Drawing.Point(208, 71);
+            this.TXTmatExcluir.Location = new System.Drawing.Point(205, 71);
             this.TXTmatExcluir.MaxLength = 20;
             this.TXTmatExcluir.Name = "TXTmatExcluir";
             this.TXTmatExcluir.Size = new System.Drawing.Size(168, 26);
@@ -288,7 +288,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(143, 102);
+            this.label8.Location = new System.Drawing.Point(140, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 18);
             this.label8.TabIndex = 18;
@@ -300,11 +300,45 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(112, 78);
+            this.label9.Location = new System.Drawing.Point(109, 78);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 18);
             this.label9.TabIndex = 17;
             this.label9.Text = "Matrícula";
+            // 
+            // PANELperfil
+            // 
+            this.PANELperfil.BackColor = System.Drawing.Color.Transparent;
+            this.PANELperfil.Controls.Add(this.LBLmat);
+            this.PANELperfil.Controls.Add(this.LBLuser);
+            this.PANELperfil.Location = new System.Drawing.Point(33, 230);
+            this.PANELperfil.Name = "PANELperfil";
+            this.PANELperfil.Size = new System.Drawing.Size(514, 207);
+            this.PANELperfil.TabIndex = 12;
+            // 
+            // LBLmat
+            // 
+            this.LBLmat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LBLmat.AutoSize = true;
+            this.LBLmat.Font = new System.Drawing.Font("Georgia", 20F, System.Drawing.FontStyle.Bold);
+            this.LBLmat.ForeColor = System.Drawing.Color.Teal;
+            this.LBLmat.Location = new System.Drawing.Point(77, 96);
+            this.LBLmat.Name = "LBLmat";
+            this.LBLmat.Size = new System.Drawing.Size(160, 31);
+            this.LBLmat.TabIndex = 17;
+            this.LBLmat.Text = "Matrícula:";
+            // 
+            // LBLuser
+            // 
+            this.LBLuser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LBLuser.AutoSize = true;
+            this.LBLuser.Font = new System.Drawing.Font("Georgia", 20F, System.Drawing.FontStyle.Bold);
+            this.LBLuser.ForeColor = System.Drawing.Color.Teal;
+            this.LBLuser.Location = new System.Drawing.Point(89, 47);
+            this.LBLuser.Name = "LBLuser";
+            this.LBLuser.Size = new System.Drawing.Size(136, 31);
+            this.LBLuser.TabIndex = 16;
+            this.LBLuser.Text = "Usuário:";
             // 
             // PANELcriarCaderno
             // 
@@ -323,9 +357,9 @@
             this.PANELcriarCaderno.Controls.Add(this.lblAno);
             this.PANELcriarCaderno.Controls.Add(this.label2);
             this.PANELcriarCaderno.Controls.Add(this.BTNcriarturma);
-            this.PANELcriarCaderno.Location = new System.Drawing.Point(33, 520);
+            this.PANELcriarCaderno.Location = new System.Drawing.Point(33, 443);
             this.PANELcriarCaderno.Name = "PANELcriarCaderno";
-            this.PANELcriarCaderno.Size = new System.Drawing.Size(514, 286);
+            this.PANELcriarCaderno.Size = new System.Drawing.Size(514, 271);
             this.PANELcriarCaderno.TabIndex = 11;
             this.PANELcriarCaderno.Visible = false;
             // 
@@ -391,7 +425,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 94);
             this.pictureBox1.TabIndex = 12;
@@ -413,7 +447,7 @@
             this.TXTano.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTano.Font = new System.Drawing.Font("Georgia", 9.5F);
             this.TXTano.Location = new System.Drawing.Point(231, 162);
-            this.TXTano.MaxLength = 15;
+            this.TXTano.MaxLength = 4;
             this.TXTano.Name = "TXTano";
             this.TXTano.Size = new System.Drawing.Size(118, 22);
             this.TXTano.TabIndex = 10;
@@ -423,7 +457,7 @@
             this.TXTturma.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTturma.Font = new System.Drawing.Font("Georgia", 9.5F);
             this.TXTturma.Location = new System.Drawing.Point(231, 138);
-            this.TXTturma.MaxLength = 15;
+            this.TXTturma.MaxLength = 6;
             this.TXTturma.Name = "TXTturma";
             this.TXTturma.Size = new System.Drawing.Size(170, 22);
             this.TXTturma.TabIndex = 8;
@@ -493,16 +527,16 @@
             this.PANELeditarCaderno.Controls.Add(this.BTNeditarCaderno);
             this.PANELeditarCaderno.Controls.Add(this.lblTurma);
             this.PANELeditarCaderno.Controls.Add(this.lblSenha);
-            this.PANELeditarCaderno.Location = new System.Drawing.Point(33, 515);
+            this.PANELeditarCaderno.Location = new System.Drawing.Point(33, 443);
             this.PANELeditarCaderno.Name = "PANELeditarCaderno";
-            this.PANELeditarCaderno.Size = new System.Drawing.Size(514, 282);
+            this.PANELeditarCaderno.Size = new System.Drawing.Size(517, 282);
             this.PANELeditarCaderno.TabIndex = 15;
             // 
             // TXTanoCaderno
             // 
             this.TXTanoCaderno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTanoCaderno.Location = new System.Drawing.Point(183, 155);
-            this.TXTanoCaderno.MaxLength = 20;
+            this.TXTanoCaderno.MaxLength = 4;
             this.TXTanoCaderno.Name = "TXTanoCaderno";
             this.TXTanoCaderno.Size = new System.Drawing.Size(188, 24);
             this.TXTanoCaderno.TabIndex = 15;
@@ -572,7 +606,7 @@
             // 
             this.TXTturmaCaderno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTturmaCaderno.Location = new System.Drawing.Point(183, 107);
-            this.TXTturmaCaderno.MaxLength = 15;
+            this.TXTturmaCaderno.MaxLength = 6;
             this.TXTturmaCaderno.Name = "TXTturmaCaderno";
             this.TXTturmaCaderno.Size = new System.Drawing.Size(188, 24);
             this.TXTturmaCaderno.TabIndex = 13;
@@ -628,40 +662,6 @@
             this.lblSenha.Text = "Senha";
             this.lblSenha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // PANELperfil
-            // 
-            this.PANELperfil.BackColor = System.Drawing.Color.Transparent;
-            this.PANELperfil.Controls.Add(this.LBLmat);
-            this.PANELperfil.Controls.Add(this.LBLuser);
-            this.PANELperfil.Location = new System.Drawing.Point(33, 253);
-            this.PANELperfil.Name = "PANELperfil";
-            this.PANELperfil.Size = new System.Drawing.Size(514, 248);
-            this.PANELperfil.TabIndex = 12;
-            // 
-            // LBLmat
-            // 
-            this.LBLmat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LBLmat.AutoSize = true;
-            this.LBLmat.Font = new System.Drawing.Font("Georgia", 20F, System.Drawing.FontStyle.Bold);
-            this.LBLmat.ForeColor = System.Drawing.Color.Teal;
-            this.LBLmat.Location = new System.Drawing.Point(77, 96);
-            this.LBLmat.Name = "LBLmat";
-            this.LBLmat.Size = new System.Drawing.Size(160, 31);
-            this.LBLmat.TabIndex = 17;
-            this.LBLmat.Text = "Matrícula:";
-            // 
-            // LBLuser
-            // 
-            this.LBLuser.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LBLuser.AutoSize = true;
-            this.LBLuser.Font = new System.Drawing.Font("Georgia", 20F, System.Drawing.FontStyle.Bold);
-            this.LBLuser.ForeColor = System.Drawing.Color.Teal;
-            this.LBLuser.Location = new System.Drawing.Point(89, 47);
-            this.LBLuser.Name = "LBLuser";
-            this.LBLuser.Size = new System.Drawing.Size(136, 31);
-            this.LBLuser.TabIndex = 16;
-            this.LBLuser.Text = "Usuário:";
-            // 
             // PANELeditarAluno
             // 
             this.PANELeditarAluno.BackColor = System.Drawing.Color.Transparent;
@@ -674,9 +674,9 @@
             this.PANELeditarAluno.Controls.Add(this.label4);
             this.PANELeditarAluno.Controls.Add(this.label3);
             this.PANELeditarAluno.Controls.Add(this.label1);
-            this.PANELeditarAluno.Location = new System.Drawing.Point(33, 250);
+            this.PANELeditarAluno.Location = new System.Drawing.Point(33, 230);
             this.PANELeditarAluno.Name = "PANELeditarAluno";
-            this.PANELeditarAluno.Size = new System.Drawing.Size(514, 248);
+            this.PANELeditarAluno.Size = new System.Drawing.Size(517, 207);
             this.PANELeditarAluno.TabIndex = 11;
             this.PANELeditarAluno.Visible = false;
             // 
@@ -707,7 +707,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(52, 121);
+            this.label6.Location = new System.Drawing.Point(53, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 18);
             this.label6.TabIndex = 23;
@@ -717,7 +717,7 @@
             // 
             this.TXTconfirmarsenhaEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTconfirmarsenhaEditar.Font = new System.Drawing.Font("Georgia", 11F);
-            this.TXTconfirmarsenhaEditar.Location = new System.Drawing.Point(207, 120);
+            this.TXTconfirmarsenhaEditar.Location = new System.Drawing.Point(208, 120);
             this.TXTconfirmarsenhaEditar.MaxLength = 20;
             this.TXTconfirmarsenhaEditar.Name = "TXTconfirmarsenhaEditar";
             this.TXTconfirmarsenhaEditar.PasswordChar = '*';
@@ -728,7 +728,7 @@
             // 
             this.TXTsenhaEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTsenhaEditar.Font = new System.Drawing.Font("Georgia", 11F);
-            this.TXTsenhaEditar.Location = new System.Drawing.Point(207, 95);
+            this.TXTsenhaEditar.Location = new System.Drawing.Point(208, 95);
             this.TXTsenhaEditar.MaxLength = 20;
             this.TXTsenhaEditar.Name = "TXTsenhaEditar";
             this.TXTsenhaEditar.PasswordChar = '*';
@@ -738,19 +738,21 @@
             // TXTmatriculaEditar
             // 
             this.TXTmatriculaEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TXTmatriculaEditar.Enabled = false;
             this.TXTmatriculaEditar.Font = new System.Drawing.Font("Georgia", 11F);
-            this.TXTmatriculaEditar.Location = new System.Drawing.Point(207, 71);
+            this.TXTmatriculaEditar.Location = new System.Drawing.Point(208, 71);
             this.TXTmatriculaEditar.MaxLength = 20;
             this.TXTmatriculaEditar.Name = "TXTmatriculaEditar";
-            this.TXTmatriculaEditar.Size = new System.Drawing.Size(118, 24);
+            this.TXTmatriculaEditar.Size = new System.Drawing.Size(170, 24);
             this.TXTmatriculaEditar.TabIndex = 20;
+            this.TXTmatriculaEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TXTusuarioEditar
             // 
             this.TXTusuarioEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTusuarioEditar.Font = new System.Drawing.Font("Georgia", 11F);
-            this.TXTusuarioEditar.Location = new System.Drawing.Point(207, 47);
-            this.TXTusuarioEditar.MaxLength = 15;
+            this.TXTusuarioEditar.Location = new System.Drawing.Point(208, 47);
+            this.TXTusuarioEditar.MaxLength = 20;
             this.TXTusuarioEditar.Name = "TXTusuarioEditar";
             this.TXTusuarioEditar.Size = new System.Drawing.Size(170, 24);
             this.TXTusuarioEditar.TabIndex = 19;
@@ -761,7 +763,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(142, 102);
+            this.label4.Location = new System.Drawing.Point(143, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 18;
@@ -773,7 +775,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(111, 78);
+            this.label3.Location = new System.Drawing.Point(112, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 17;
@@ -785,7 +787,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(127, 54);
+            this.label1.Location = new System.Drawing.Point(128, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 18);
             this.label1.TabIndex = 16;
@@ -794,13 +796,14 @@
             // filtro
             // 
             this.filtro.BackColor = System.Drawing.Color.Transparent;
+            this.filtro.Controls.Add(this.BTNlimpar);
+            this.filtro.Controls.Add(this.BTNtudo);
             this.filtro.Controls.Add(this.LISTA);
-            this.filtro.Controls.Add(this.label11);
             this.filtro.Controls.Add(this.CBmateria);
             this.filtro.Controls.Add(this.TXTconteudo);
             this.filtro.Controls.Add(this.BTNabrirConteudo);
             this.filtro.Controls.Add(this.BTNbuscar);
-            this.filtro.Controls.Add(this.textBox1);
+            this.filtro.Controls.Add(this.TXTtituloBusca);
             this.filtro.Controls.Add(this.label13);
             this.filtro.Controls.Add(this.CBidCaderno);
             this.filtro.Controls.Add(this.label12);
@@ -810,10 +813,34 @@
             this.filtro.ForeColor = System.Drawing.SystemColors.Info;
             this.filtro.Location = new System.Drawing.Point(593, 3);
             this.filtro.Name = "filtro";
-            this.filtro.Size = new System.Drawing.Size(983, 826);
+            this.filtro.Size = new System.Drawing.Size(971, 826);
             this.filtro.TabIndex = 11;
             this.filtro.TabStop = false;
             this.filtro.Text = "FILTRAR";
+            // 
+            // BTNlimpar
+            // 
+            this.BTNlimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNlimpar.Font = new System.Drawing.Font("Franklin Gothic Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.BTNlimpar.Location = new System.Drawing.Point(806, 17);
+            this.BTNlimpar.Name = "BTNlimpar";
+            this.BTNlimpar.Size = new System.Drawing.Size(134, 30);
+            this.BTNlimpar.TabIndex = 17;
+            this.BTNlimpar.Text = "Limpar Filtros";
+            this.BTNlimpar.UseVisualStyleBackColor = true;
+            this.BTNlimpar.Click += new System.EventHandler(this.BTNlimpar_Click);
+            // 
+            // BTNtudo
+            // 
+            this.BTNtudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNtudo.Font = new System.Drawing.Font("Franklin Gothic Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.BTNtudo.Location = new System.Drawing.Point(806, 53);
+            this.BTNtudo.Name = "BTNtudo";
+            this.BTNtudo.Size = new System.Drawing.Size(134, 30);
+            this.BTNtudo.TabIndex = 16;
+            this.BTNtudo.Text = "Exibir Tudo";
+            this.BTNtudo.UseVisualStyleBackColor = true;
+            this.BTNtudo.Click += new System.EventHandler(this.BTNtudo_Click);
             // 
             // LISTA
             // 
@@ -823,30 +850,28 @@
             this.LISTA.BackColor = System.Drawing.Color.White;
             this.LISTA.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cTurma,
-            this.cAno,
             this.cMatéria,
             this.cTítulo});
-            this.LISTA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LISTA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.LISTA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LISTA.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.LISTA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.LISTA.FullRowSelect = true;
             this.LISTA.GridLines = true;
+            this.LISTA.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.LISTA.HideSelection = false;
             this.LISTA.Location = new System.Drawing.Point(6, 135);
             this.LISTA.MultiSelect = false;
             this.LISTA.Name = "LISTA";
-            this.LISTA.Size = new System.Drawing.Size(971, 608);
+            this.LISTA.Size = new System.Drawing.Size(956, 601);
             this.LISTA.TabIndex = 12;
             this.LISTA.UseCompatibleStateImageBehavior = false;
             this.LISTA.View = System.Windows.Forms.View.Details;
+            this.LISTA.SelectedIndexChanged += new System.EventHandler(this.LISTA_SelectedIndexChanged);
             // 
             // cTurma
             // 
-            this.cTurma.Text = "TURMA";
-            this.cTurma.Width = 90;
-            // 
-            // cAno
-            // 
-            this.cAno.Text = "ANO";
-            this.cAno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cAno.Width = 83;
+            this.cTurma.Text = "TURMA/ANO";
+            this.cTurma.Width = 148;
             // 
             // cMatéria
             // 
@@ -858,33 +883,23 @@
             // 
             this.cTítulo.Text = "TÍTULO DO CONTEÚDO";
             this.cTítulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cTítulo.Width = 467;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.SystemColors.Info;
-            this.label11.Location = new System.Drawing.Point(9, 770);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 28);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "CONTEÚDO";
+            this.cTítulo.Width = 482;
             // 
             // CBmateria
             // 
             this.CBmateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBmateria.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.CBmateria.Font = new System.Drawing.Font("Franklin Gothic Medium", 14F, System.Drawing.FontStyle.Bold);
             this.CBmateria.FormattingEnabled = true;
-            this.CBmateria.ItemHeight = 21;
+            this.CBmateria.ItemHeight = 24;
             this.CBmateria.Location = new System.Drawing.Point(467, 44);
             this.CBmateria.MaxDropDownItems = 100;
             this.CBmateria.Name = "CBmateria";
-            this.CBmateria.Size = new System.Drawing.Size(319, 29);
+            this.CBmateria.Size = new System.Drawing.Size(319, 32);
             this.CBmateria.TabIndex = 9;
             // 
             // TXTconteudo
             // 
+            this.TXTconteudo.Enabled = false;
             this.TXTconteudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.TXTconteudo.Location = new System.Drawing.Point(139, 768);
             this.TXTconteudo.Name = "TXTconteudo";
@@ -903,23 +918,27 @@
             this.BTNabrirConteudo.TabIndex = 13;
             this.BTNabrirConteudo.Text = "ABRIR CONTEÚDO";
             this.BTNabrirConteudo.UseVisualStyleBackColor = false;
+            this.BTNabrirConteudo.Click += new System.EventHandler(this.BTNabrirConteudo_Click);
             // 
             // BTNbuscar
             // 
             this.BTNbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNbuscar.Location = new System.Drawing.Point(821, 58);
+            this.BTNbuscar.Font = new System.Drawing.Font("Franklin Gothic Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.BTNbuscar.Location = new System.Drawing.Point(806, 88);
             this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(122, 49);
+            this.BTNbuscar.Size = new System.Drawing.Size(134, 30);
             this.BTNbuscar.TabIndex = 8;
             this.BTNbuscar.Text = "Buscar";
             this.BTNbuscar.UseVisualStyleBackColor = true;
+            this.BTNbuscar.Click += new System.EventHandler(this.BTNbuscar_Click);
             // 
-            // textBox1
+            // TXTtituloBusca
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(698, 32);
-            this.textBox1.TabIndex = 7;
+            this.TXTtituloBusca.Location = new System.Drawing.Point(99, 85);
+            this.TXTtituloBusca.MaxLength = 30;
+            this.TXTtituloBusca.Name = "TXTtituloBusca";
+            this.TXTtituloBusca.Size = new System.Drawing.Size(698, 32);
+            this.TXTtituloBusca.TabIndex = 7;
             // 
             // label13
             // 
@@ -932,9 +951,11 @@
             // 
             // CBidCaderno
             // 
+            this.CBidCaderno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBidCaderno.Font = new System.Drawing.Font("Franklin Gothic Medium", 14F, System.Drawing.FontStyle.Bold);
             this.CBidCaderno.FormattingEnabled = true;
             this.CBidCaderno.Location = new System.Drawing.Point(196, 44);
+            this.CBidCaderno.MaxDropDownItems = 10;
             this.CBidCaderno.Name = "CBidCaderno";
             this.CBidCaderno.Size = new System.Drawing.Size(179, 32);
             this.CBidCaderno.TabIndex = 4;
@@ -961,9 +982,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1588, 836);
+            this.ClientSize = new System.Drawing.Size(1584, 741);
             this.ControlBox = false;
             this.Controls.Add(this.PANELinfoPerfil);
             this.Controls.Add(this.filtro);
@@ -976,13 +998,13 @@
             this.PANELinfoPerfil.PerformLayout();
             this.PANELexcluirAluno.ResumeLayout(false);
             this.PANELexcluirAluno.PerformLayout();
+            this.PANELperfil.ResumeLayout(false);
+            this.PANELperfil.PerformLayout();
             this.PANELcriarCaderno.ResumeLayout(false);
             this.PANELcriarCaderno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PANELeditarCaderno.ResumeLayout(false);
             this.PANELeditarCaderno.PerformLayout();
-            this.PANELperfil.ResumeLayout(false);
-            this.PANELperfil.PerformLayout();
             this.PANELeditarAluno.ResumeLayout(false);
             this.PANELeditarAluno.PerformLayout();
             this.filtro.ResumeLayout(false);
@@ -1043,19 +1065,19 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox filtro;
         private System.Windows.Forms.Button BTNbuscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXTtituloBusca;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox CBidCaderno;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView LISTA;
         public System.Windows.Forms.ColumnHeader cTurma;
-        public System.Windows.Forms.ColumnHeader cAno;
         public System.Windows.Forms.ColumnHeader cMatéria;
         public System.Windows.Forms.ColumnHeader cTítulo;
         private System.Windows.Forms.ComboBox CBmateria;
         private System.Windows.Forms.Button BTNabrirConteudo;
         private System.Windows.Forms.TextBox TXTconteudo;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button BTNtudo;
+        private System.Windows.Forms.Button BTNlimpar;
     }
 }

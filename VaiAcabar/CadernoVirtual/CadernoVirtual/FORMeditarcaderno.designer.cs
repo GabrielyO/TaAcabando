@@ -37,14 +37,9 @@
             this.BTNcriarMateria = new System.Windows.Forms.Button();
             this.tituloEditar = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PANELexcluirMateria = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.CBmateriaEx = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BTNmateriaEX = new System.Windows.Forms.Button();
             this.PANELexcluirConteudo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CBtituloExcluir = new System.Windows.Forms.ComboBox();
+            this.CBtitulo = new System.Windows.Forms.ComboBox();
+            this.BTNcontEX = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.PANELaddConteudo = new System.Windows.Forms.Panel();
             this.CBmateria = new System.Windows.Forms.ComboBox();
@@ -57,12 +52,17 @@
             this.TXTnomeMateria = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.BTNaddMat = new System.Windows.Forms.Button();
+            this.PANELexcluirMateria = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CBmateriaEx = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BTNmateriaEX = new System.Windows.Forms.Button();
             this.PANELcadastrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.PANELexcluirMateria.SuspendLayout();
             this.PANELexcluirConteudo.SuspendLayout();
             this.PANELaddConteudo.SuspendLayout();
             this.PANELaddMateria.SuspendLayout();
+            this.PANELexcluirMateria.SuspendLayout();
             this.SuspendLayout();
             // 
             // PANELcadastrar
@@ -70,6 +70,8 @@
             this.PANELcadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANELcadastrar.AutoScroll = true;
+            this.PANELcadastrar.AutoSize = true;
             this.PANELcadastrar.BackColor = System.Drawing.Color.Transparent;
             this.PANELcadastrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PANELcadastrar.BackgroundImage")));
             this.PANELcadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -81,13 +83,13 @@
             this.PANELcadastrar.Controls.Add(this.BTNcriarMateria);
             this.PANELcadastrar.Controls.Add(this.tituloEditar);
             this.PANELcadastrar.Controls.Add(this.pictureBox1);
-            this.PANELcadastrar.Controls.Add(this.PANELexcluirMateria);
-            this.PANELcadastrar.Controls.Add(this.PANELexcluirConteudo);
             this.PANELcadastrar.Controls.Add(this.PANELaddConteudo);
             this.PANELcadastrar.Controls.Add(this.PANELaddMateria);
+            this.PANELcadastrar.Controls.Add(this.PANELexcluirMateria);
+            this.PANELcadastrar.Controls.Add(this.PANELexcluirConteudo);
             this.PANELcadastrar.Location = new System.Drawing.Point(40, 55);
             this.PANELcadastrar.Name = "PANELcadastrar";
-            this.PANELcadastrar.Size = new System.Drawing.Size(1118, 707);
+            this.PANELcadastrar.Size = new System.Drawing.Size(1118, 609);
             this.PANELcadastrar.TabIndex = 7;
             // 
             // BTNvoltarIndividual
@@ -97,7 +99,7 @@
             this.BTNvoltarIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNvoltarIndividual.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
             this.BTNvoltarIndividual.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNvoltarIndividual.Location = new System.Drawing.Point(51, 546);
+            this.BTNvoltarIndividual.Location = new System.Drawing.Point(51, 497);
             this.BTNvoltarIndividual.Name = "BTNvoltarIndividual";
             this.BTNvoltarIndividual.Size = new System.Drawing.Size(221, 49);
             this.BTNvoltarIndividual.TabIndex = 28;
@@ -112,7 +114,7 @@
             this.BTNexcluirMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNexcluirMateria.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
             this.BTNexcluirMateria.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNexcluirMateria.Location = new System.Drawing.Point(51, 382);
+            this.BTNexcluirMateria.Location = new System.Drawing.Point(51, 333);
             this.BTNexcluirMateria.Name = "BTNexcluirMateria";
             this.BTNexcluirMateria.Size = new System.Drawing.Size(221, 49);
             this.BTNexcluirMateria.TabIndex = 26;
@@ -127,7 +129,7 @@
             this.BTNexcluirConteudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNexcluirConteudo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
             this.BTNexcluirConteudo.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNexcluirConteudo.Location = new System.Drawing.Point(51, 272);
+            this.BTNexcluirConteudo.Location = new System.Drawing.Point(51, 223);
             this.BTNexcluirConteudo.Name = "BTNexcluirConteudo";
             this.BTNexcluirConteudo.Size = new System.Drawing.Size(221, 49);
             this.BTNexcluirConteudo.TabIndex = 25;
@@ -142,7 +144,7 @@
             this.BTNadicionarConteudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNadicionarConteudo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
             this.BTNadicionarConteudo.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNadicionarConteudo.Location = new System.Drawing.Point(51, 217);
+            this.BTNadicionarConteudo.Location = new System.Drawing.Point(51, 168);
             this.BTNadicionarConteudo.Name = "BTNadicionarConteudo";
             this.BTNadicionarConteudo.Size = new System.Drawing.Size(221, 49);
             this.BTNadicionarConteudo.TabIndex = 24;
@@ -157,7 +159,7 @@
             this.BTNcriarMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNcriarMateria.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
             this.BTNcriarMateria.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNcriarMateria.Location = new System.Drawing.Point(51, 327);
+            this.BTNcriarMateria.Location = new System.Drawing.Point(51, 278);
             this.BTNcriarMateria.Name = "BTNcriarMateria";
             this.BTNcriarMateria.Size = new System.Drawing.Size(221, 49);
             this.BTNcriarMateria.TabIndex = 23;
@@ -187,76 +189,16 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(90, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 148);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // PANELexcluirMateria
-            // 
-            this.PANELexcluirMateria.Controls.Add(this.label4);
-            this.PANELexcluirMateria.Controls.Add(this.CBmateriaEx);
-            this.PANELexcluirMateria.Controls.Add(this.label3);
-            this.PANELexcluirMateria.Controls.Add(this.BTNmateriaEX);
-            this.PANELexcluirMateria.Location = new System.Drawing.Point(295, 97);
-            this.PANELexcluirMateria.Name = "PANELexcluirMateria";
-            this.PANELexcluirMateria.Size = new System.Drawing.Size(765, 505);
-            this.PANELexcluirMateria.TabIndex = 21;
-            this.PANELexcluirMateria.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(111, 466);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(568, 18);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "OBS: Você só poderá excluir as matérias que pertencem apenas a esse caderno.";
-            // 
-            // CBmateriaEx
-            // 
-            this.CBmateriaEx.Font = new System.Drawing.Font("Georgia", 14F);
-            this.CBmateriaEx.FormattingEnabled = true;
-            this.CBmateriaEx.Location = new System.Drawing.Point(209, 183);
-            this.CBmateriaEx.Name = "CBmateriaEx";
-            this.CBmateriaEx.Size = new System.Drawing.Size(364, 31);
-            this.CBmateriaEx.TabIndex = 29;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 16F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(338, 150);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 28);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "MATÉRIA";
-            // 
-            // BTNmateriaEX
-            // 
-            this.BTNmateriaEX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTNmateriaEX.BackColor = System.Drawing.Color.Transparent;
-            this.BTNmateriaEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNmateriaEX.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.BTNmateriaEX.ForeColor = System.Drawing.SystemColors.Info;
-            this.BTNmateriaEX.Location = new System.Drawing.Point(282, 220);
-            this.BTNmateriaEX.Name = "BTNmateriaEX";
-            this.BTNmateriaEX.Size = new System.Drawing.Size(221, 49);
-            this.BTNmateriaEX.TabIndex = 27;
-            this.BTNmateriaEX.Text = "EXCLUIR MATÉRIA";
-            this.BTNmateriaEX.UseVisualStyleBackColor = false;
-            this.BTNmateriaEX.Click += new System.EventHandler(this.BTNmateriaEX_Click);
-            // 
             // PANELexcluirConteudo
             // 
-            this.PANELexcluirConteudo.Controls.Add(this.button1);
-            this.PANELexcluirConteudo.Controls.Add(this.CBtituloExcluir);
+            this.PANELexcluirConteudo.Controls.Add(this.CBtitulo);
+            this.PANELexcluirConteudo.Controls.Add(this.BTNcontEX);
             this.PANELexcluirConteudo.Controls.Add(this.label2);
             this.PANELexcluirConteudo.Location = new System.Drawing.Point(295, 99);
             this.PANELexcluirConteudo.Name = "PANELexcluirConteudo";
@@ -264,28 +206,30 @@
             this.PANELexcluirConteudo.TabIndex = 20;
             this.PANELexcluirConteudo.Visible = false;
             // 
-            // button1
+            // CBtitulo
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Location = new System.Drawing.Point(273, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 49);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "EXCLUIR CONTEÚDO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CBtitulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBtitulo.Font = new System.Drawing.Font("Georgia", 12F);
+            this.CBtitulo.FormattingEnabled = true;
+            this.CBtitulo.Location = new System.Drawing.Point(85, 179);
+            this.CBtitulo.Name = "CBtitulo";
+            this.CBtitulo.Size = new System.Drawing.Size(594, 26);
+            this.CBtitulo.TabIndex = 28;
             // 
-            // CBtituloExcluir
+            // BTNcontEX
             // 
-            this.CBtituloExcluir.Font = new System.Drawing.Font("Georgia", 14F);
-            this.CBtituloExcluir.FormattingEnabled = true;
-            this.CBtituloExcluir.Location = new System.Drawing.Point(14, 181);
-            this.CBtituloExcluir.Name = "CBtituloExcluir";
-            this.CBtituloExcluir.Size = new System.Drawing.Size(744, 31);
-            this.CBtituloExcluir.TabIndex = 26;
+            this.BTNcontEX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTNcontEX.BackColor = System.Drawing.Color.Transparent;
+            this.BTNcontEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNcontEX.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.BTNcontEX.ForeColor = System.Drawing.SystemColors.Info;
+            this.BTNcontEX.Location = new System.Drawing.Point(273, 218);
+            this.BTNcontEX.Name = "BTNcontEX";
+            this.BTNcontEX.Size = new System.Drawing.Size(221, 49);
+            this.BTNcontEX.TabIndex = 27;
+            this.BTNcontEX.Text = "EXCLUIR CONTEÚDO";
+            this.BTNcontEX.UseVisualStyleBackColor = false;
+            this.BTNcontEX.Click += new System.EventHandler(this.BTNcontEX_Click);
             // 
             // label2
             // 
@@ -315,6 +259,7 @@
             // 
             // CBmateria
             // 
+            this.CBmateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBmateria.Font = new System.Drawing.Font("Georgia", 12F);
             this.CBmateria.FormattingEnabled = true;
             this.CBmateria.Location = new System.Drawing.Point(501, 28);
@@ -359,21 +304,24 @@
             this.BTNaddConteudo.TabIndex = 22;
             this.BTNaddConteudo.Text = "ADICIONAR CONTEÚDO";
             this.BTNaddConteudo.UseVisualStyleBackColor = false;
+            this.BTNaddConteudo.Click += new System.EventHandler(this.BTNaddConteudo_Click);
             // 
             // TXTtituloConteudo
             // 
             this.TXTtituloConteudo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TXTtituloConteudo.Font = new System.Drawing.Font("Georgia", 12F);
-            this.TXTtituloConteudo.Location = new System.Drawing.Point(18, 28);
+            this.TXTtituloConteudo.Location = new System.Drawing.Point(14, 28);
             this.TXTtituloConteudo.Name = "TXTtituloConteudo";
-            this.TXTtituloConteudo.Size = new System.Drawing.Size(464, 26);
+            this.TXTtituloConteudo.Size = new System.Drawing.Size(468, 26);
             this.TXTtituloConteudo.TabIndex = 21;
             // 
             // TXTconteudo
             // 
             this.TXTconteudo.Location = new System.Drawing.Point(14, 63);
+            this.TXTconteudo.MaxLength = 21844;
             this.TXTconteudo.Multiline = true;
             this.TXTconteudo.Name = "TXTconteudo";
+            this.TXTconteudo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TXTconteudo.Size = new System.Drawing.Size(744, 375);
             this.TXTconteudo.TabIndex = 19;
             // 
@@ -424,13 +372,75 @@
             this.BTNaddMat.UseVisualStyleBackColor = false;
             this.BTNaddMat.Click += new System.EventHandler(this.BTNaddMat_Click);
             // 
+            // PANELexcluirMateria
+            // 
+            this.PANELexcluirMateria.Controls.Add(this.label4);
+            this.PANELexcluirMateria.Controls.Add(this.CBmateriaEx);
+            this.PANELexcluirMateria.Controls.Add(this.label3);
+            this.PANELexcluirMateria.Controls.Add(this.BTNmateriaEX);
+            this.PANELexcluirMateria.Location = new System.Drawing.Point(295, 97);
+            this.PANELexcluirMateria.Name = "PANELexcluirMateria";
+            this.PANELexcluirMateria.Size = new System.Drawing.Size(765, 505);
+            this.PANELexcluirMateria.TabIndex = 21;
+            this.PANELexcluirMateria.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(111, 466);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(568, 18);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "OBS: Você só poderá excluir as matérias que pertencem apenas a esse caderno.";
+            // 
+            // CBmateriaEx
+            // 
+            this.CBmateriaEx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBmateriaEx.Font = new System.Drawing.Font("Georgia", 14F);
+            this.CBmateriaEx.FormattingEnabled = true;
+            this.CBmateriaEx.Location = new System.Drawing.Point(209, 183);
+            this.CBmateriaEx.Name = "CBmateriaEx";
+            this.CBmateriaEx.Size = new System.Drawing.Size(364, 31);
+            this.CBmateriaEx.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(338, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 28);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "MATÉRIA";
+            // 
+            // BTNmateriaEX
+            // 
+            this.BTNmateriaEX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTNmateriaEX.BackColor = System.Drawing.Color.Transparent;
+            this.BTNmateriaEX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNmateriaEX.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.BTNmateriaEX.ForeColor = System.Drawing.SystemColors.Info;
+            this.BTNmateriaEX.Location = new System.Drawing.Point(282, 220);
+            this.BTNmateriaEX.Name = "BTNmateriaEX";
+            this.BTNmateriaEX.Size = new System.Drawing.Size(221, 49);
+            this.BTNmateriaEX.TabIndex = 27;
+            this.BTNmateriaEX.Text = "EXCLUIR MATÉRIA";
+            this.BTNmateriaEX.UseVisualStyleBackColor = false;
+            this.BTNmateriaEX.Click += new System.EventHandler(this.BTNmateriaEX_Click);
+            // 
             // FORMeditarcaderno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1584, 741);
             this.Controls.Add(this.PANELcadastrar);
             this.Name = "FORMeditarcaderno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -439,15 +449,16 @@
             this.PANELcadastrar.ResumeLayout(false);
             this.PANELcadastrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PANELexcluirMateria.ResumeLayout(false);
-            this.PANELexcluirMateria.PerformLayout();
             this.PANELexcluirConteudo.ResumeLayout(false);
             this.PANELexcluirConteudo.PerformLayout();
             this.PANELaddConteudo.ResumeLayout(false);
             this.PANELaddConteudo.PerformLayout();
             this.PANELaddMateria.ResumeLayout(false);
             this.PANELaddMateria.PerformLayout();
+            this.PANELexcluirMateria.ResumeLayout(false);
+            this.PANELexcluirMateria.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -469,8 +480,7 @@
         private System.Windows.Forms.Button BTNaddConteudo;
         private System.Windows.Forms.TextBox TXTtituloConteudo;
         private System.Windows.Forms.TextBox TXTconteudo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox CBtituloExcluir;
+        private System.Windows.Forms.Button BTNcontEX;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBmateriaEx;
@@ -481,5 +491,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button BTNaddMat;
         private System.Windows.Forms.Button BTNvoltarIndividual;
+        private System.Windows.Forms.ComboBox CBtitulo;
     }
 }

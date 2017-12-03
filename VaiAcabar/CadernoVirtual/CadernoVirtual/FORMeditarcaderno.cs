@@ -25,6 +25,8 @@ namespace CadernoVirtual
             senhaI = senha;
             tituloEditar.Text = "EDITAR CADERNO: " + idCaderno;
             PreencherCBmatCont();
+            PreencherCBmaterias();
+            PreencherCBtitulo();
         }
 
         //VERIFICAÇÕES
@@ -47,14 +49,33 @@ namespace CadernoVirtual
                 return false;
             }
         }
+        public bool VerificarConteudo(string titulo)
+        {
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "select count(*) from conteudo where idConteudo = @idConteudo;";
+            string id = idCadernoI + titulo;
+            cmd.Parameters.AddWithValue("@idConteudo", id);
+            cmd.Connection.Open();
 
-        //PREENCHER CB Matéria
-        public void PreencherCBmaterias(string id)
+            if (Convert.ToInt32(cmd.ExecuteScalar().ToString()) > 0)
+            {
+                cmd.Connection.Close();
+                return true;
+            }
+            else
+            {
+                cmd.Connection.Close();
+                return false;
+            }
+        }
+
+        //PREENCHER CB MATERIA EXCLUIR
+        public void PreencherCBmaterias()
         {
             MySqlCommand cmd = Conectar();
             MySqlCommand cmd2 = Conectar();
             cmd.CommandText = "SELECT DISTINCT(nome) FROM conteudo WHERE idCaderno = @idCaderno;";
-            cmd.Parameters.AddWithValue("@idCaderno", id);
+            cmd.Parameters.AddWithValue("@idCaderno", idCadernoI);
 
             string erro = "";
             try
@@ -71,7 +92,7 @@ namespace CadernoVirtual
                     string mat;
                     while (dr.Read())
                     {
-                        cmd2.CommandText = "SELECT DISTINCT Count(idCaderno) FROM conteudo WHERE nome = @nome;";
+                        cmd2.CommandText = "SELECT Count(DISTINCT idCaderno) FROM conteudo WHERE nome = @nome;";
                         mat = dr.GetString(0);
 
                         cmd2.Parameters.Clear();
@@ -96,7 +117,7 @@ namespace CadernoVirtual
                 MessageBox.Show(erro);
             }
         }
-        //PREENCHER CBCADERNO
+        //PREENCHER CB MATERIA CONTEUDO
         public void PreencherCBmatCont()
         {
             MySqlCommand cmd = Conectar();
@@ -106,7 +127,7 @@ namespace CadernoVirtual
             try
             {
                 CBmateria.Items.Clear();
-                erro = "Falha na conexão ao banco (Editar Caderno)";
+                erro = "Falha na conexão ao banco (Preencher Banco Materia Conteudo)";
                 cmd.Connection.Open();
                 erro = "Falha ao buscar na tabela Caderno";
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -126,13 +147,76 @@ namespace CadernoVirtual
                 MessageBox.Show(erro);
             }
         }
+        //PREENCHER CB TITULO
+        public void PreencherCBtitulo()
+        {
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT titulo FROM conteudo WHERE idCaderno = @idCaderno";
+            cmd.Parameters.AddWithValue("@idCaderno", idCadernoI);
 
-            //CONECTAR
-            public MySqlCommand Conectar()
+            string erro = "";
+            try
+            {
+                CBtitulo.Items.Clear();
+                erro = "Falha na conexão ao banco (Preencher Banco Titulo Excluir)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar na tabela Caderno";
+                MySqlDataReader dr = cmd.ExecuteReader();
+                string t;
+
+                while (dr.Read())
+                {
+                    t = dr.GetString(0);
+                    CBtitulo.Items.Add(t);
+                }
+
+                erro = "Falha ao fechar conexão";
+                cmd.Connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show(erro);
+            }
+        }
+
+        //BUSCAR IDCONTEÚDO
+        public string BuscarConteudo()
+        {
+            MySqlCommand cmd = Conectar();
+            cmd.CommandText = "SELECT idConteudo FROM conteudo WHERE idCaderno = @idCaderno AND titulo = @titulo;";
+            cmd.Parameters.AddWithValue("@idCaderno", idCadernoI);
+            cmd.Parameters.AddWithValue("@titulo", CBtitulo.Text);
+
+            string erro = "";
+            try
+            {
+                string i = "";
+                erro = "Falha na conexão ao banco (Buscar Conteudo)";
+                cmd.Connection.Open();
+                erro = "Falha ao buscar na tabela Conteudo";
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while(dr.Read())
+                {
+                    i = dr.GetString(0);
+                }
+                erro = "Falha ao fechar conexão";
+                cmd.Connection.Close();
+
+                return i;
+            }
+            catch
+            {
+                MessageBox.Show(erro);
+                return "";
+            }            
+        }
+
+        //CONECTAR
+        public MySqlCommand Conectar()
         {
             MySqlCommand cmd = new MySqlCommand
             {
-                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=root")//Lembrar de alterar PWD: root
+                Connection = new MySqlConnection("Server=127.0.0.1;Database=caderno;Uid=root;Pwd=")//Lembrar de alterar PWD: root
             };
             return cmd;
         }
@@ -145,6 +229,9 @@ namespace CadernoVirtual
             PANELexcluirMateria.Visible = false;
             PANELaddMateria.Visible = false;
 
+            PreencherCBtitulo();
+            PreencherCBmaterias();
+            PreencherCBmatCont();
         }
         private void BTNexcluirMateria_Click(object sender, EventArgs e)
         {
@@ -152,7 +239,10 @@ namespace CadernoVirtual
             PANELexcluirConteudo.Visible = false;
             PANELexcluirMateria.Visible = true;
             PANELaddMateria.Visible = false;
-            PreencherCBmaterias(idCadernoI);
+
+            PreencherCBtitulo();
+            PreencherCBmaterias();
+            PreencherCBmatCont();
         }
         private void BTNvoltarIndividual_Click(object sender, EventArgs e)
         {
@@ -160,8 +250,123 @@ namespace CadernoVirtual
             formIndividual.Show();
             this.Close();
         }
+        private void BTNcriarMateria_Click(object sender, EventArgs e)
+        {
+            PANELaddConteudo.Visible = false;
+            PANELexcluirConteudo.Visible = false;
+            PANELexcluirMateria.Visible = false;
+            PANELaddMateria.Visible = true;
 
-        //EXCLUIR BTN
+            PreencherCBtitulo();
+            PreencherCBmaterias();
+            PreencherCBmatCont();
+        }
+        private void BTNadicionarConteudo_Click(object sender, EventArgs e)
+        {
+            PANELaddConteudo.Visible = true;
+            PANELexcluirConteudo.Visible = false;
+            PANELexcluirMateria.Visible = false;
+            PANELaddMateria.Visible = false;
+
+            PreencherCBtitulo();
+            PreencherCBmaterias();
+            PreencherCBmatCont();
+        }
+
+        //EXCLUIR CONTEÚDO
+        private void BTNcontEX_Click(object sender, EventArgs e)
+        {
+            if (CBtitulo.Text == string.Empty)
+                MessageBox.Show("Escolha uma opção");
+
+            else
+            {
+                string erro = "";
+                try
+                {
+                    string id = BuscarConteudo();
+
+                    MySqlCommand cmd = Conectar();
+                    cmd.CommandText = "DELETE FROM conteudo WHERE idConteudo = @idConteudo;";
+
+                    cmd.Parameters.AddWithValue("@idConteudo", id);
+
+                    erro = "Falha na conexão ao banco (Exclusão de aluno)";
+                    cmd.Connection.Open();
+                    erro = "Falha ao excluir!";
+                    cmd.ExecuteNonQuery();
+                    erro = "Falha ao fechar conexão";
+                    cmd.Connection.Close();                    
+
+                    MessageBox.Show("Conteúdo excluído com sucesso!");
+                    CBtitulo.SelectedText = string.Empty;
+
+                    PreencherCBmaterias();
+                    PreencherCBtitulo();
+                }
+                catch
+                {
+                    MessageBox.Show(erro);
+                }
+            }
+        }        
+
+        //ADD CONTEÚDO
+        private void BTNaddConteudo_Click(object sender, EventArgs e)
+        {
+            if (TXTtituloConteudo.Text == string.Empty || CBmateria.Text == string.Empty || TXTconteudo.Text == string.Empty)
+                MessageBox.Show("Preencha todos os campos");
+
+            else
+            {
+                if (VerificarConteudo(TXTtituloConteudo.Text) == false)
+                {
+                    MySqlCommand cmd = Conectar();
+                    cmd.CommandText = "INSERT INTO conteudo (idConteudo, idCaderno, nome, titulo, conteudo) VALUES (@idConteudo, @idCaderno, @nome, @titulo, @conteudo);";
+                    Conteudo c = new Conteudo();
+
+                    c.idConteudo = idCadernoI + TXTtituloConteudo.Text;
+                    c.idCaderno = idCadernoI;
+                    c.nome = CBmateria.Text;
+                    c.titulo = TXTtituloConteudo.Text;
+                    c.conteudo = TXTconteudo.Text;
+
+                    cmd.Parameters.AddWithValue("@idConteudo", c.idConteudo);
+                    cmd.Parameters.AddWithValue("@idCaderno", c.idCaderno);
+                    cmd.Parameters.AddWithValue("@nome", c.nome);
+                    cmd.Parameters.AddWithValue("@titulo", c.titulo);
+                    cmd.Parameters.AddWithValue("@conteudo", c.conteudo);
+
+                    string erro = "";
+                    try
+                    {
+                        erro = "Falha na conexão ao banco (cadastro conteúdo)";
+                        cmd.Connection.Open();
+                        erro = "Falha ao cadastrar Conteúdo";
+                        cmd.ExecuteNonQuery();
+                        erro = "Falha ao fechar conexão";
+                        cmd.Connection.Close();
+                        
+                        MessageBox.Show("Conteúdo cadastrado com sucesso");
+                        PreencherCBtitulo();
+                        TXTtituloConteudo.Clear();
+                        TXTconteudo.Clear();
+                    }
+                    catch
+                    {
+                        MessageBox.Show(erro);
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Esse Título já existe nesse caderno, tente escolher outro Título");
+                    TXTtituloConteudo.Clear();
+                }
+            }
+        }       
+
+        //EXCLUIR MATÉRIA
         private void BTNmateriaEX_Click(object sender, EventArgs e)
         {
             if (CBmateriaEx.Text == string.Empty)
@@ -194,36 +399,17 @@ namespace CadernoVirtual
                     cmd2.Connection.Close();
 
                     MessageBox.Show("Matéria excluída com sucesso!");
-                    CBmateriaEx.Text = "";
 
-                    CBmateria.Items.Clear();
+                    CBmateriaEx.SelectedText = string.Empty;
                     PreencherCBmatCont();
-                    PreencherCBmaterias(idCadernoI);
+                    PreencherCBmaterias();
                 }
                 catch
                 {
                     MessageBox.Show(erro);
                 }
-
-
             }
-
-        }
-
-        private void BTNcriarMateria_Click(object sender, EventArgs e)
-        {
-            PANELaddConteudo.Visible = false;
-            PANELexcluirConteudo.Visible = false;
-            PANELexcluirMateria.Visible = false;
-            PANELaddMateria.Visible = true;
-        }
-        private void BTNadicionarConteudo_Click(object sender, EventArgs e)
-        {
-            PANELaddConteudo.Visible = true;
-            PANELexcluirConteudo.Visible = false;
-            PANELexcluirMateria.Visible = false;
-            PANELaddMateria.Visible = false;
-        }
+        }        
 
         //ADD MATÉRIA
         private void BTNaddMat_Click(object sender, EventArgs e)
@@ -255,17 +441,18 @@ namespace CadernoVirtual
                         erro = "Falha ao fechar conexão";
                         cmd.Connection.Close();
 
-                        
+                        PreencherCBmatCont();
+                        PreencherCBmaterias();
+
                         MessageBox.Show("Matéria cadastrada com sucesso");
-                        TXTnomeMateria.Clear();
-                        PANELaddMateria.Visible = false;                      
+
+                        TXTnomeMateria.Clear();                     
                     }
                     catch
                     {
                         MessageBox.Show(erro);
                     }
-                }
-                        
+                }                        
                 else
                 {
                     MessageBox.Show("Já existe uma Matéria cadastrada com esse nome");

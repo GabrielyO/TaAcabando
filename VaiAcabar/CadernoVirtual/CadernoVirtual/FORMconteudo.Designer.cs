@@ -29,25 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FORMconteudo));
+            this.txtC = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // FORMcaderno
+            // txtC
+            // 
+            this.txtC.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtC.Enabled = false;
+            this.txtC.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtC.Location = new System.Drawing.Point(0, 0);
+            this.txtC.Multiline = true;
+            this.txtC.Name = "txtC";
+            this.txtC.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtC.Size = new System.Drawing.Size(587, 386);
+            this.txtC.TabIndex = 0;
+            // 
+            // FORMconteudo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(587, 386);
+            this.Controls.Add(this.txtC);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FORMcaderno";
+            this.Name = "FORMconteudo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edição de Caderno";
+            this.Text = "Conteúdo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtC;
     }
 }
